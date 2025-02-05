@@ -8,12 +8,12 @@
 
 /* Show mobile class, hide tablet-desktop class and menu-links id */
 .mobile {
-    display: block;
+    display: block !important;
 }
 
 .tablet-desktop {
-    display: none;
-}
+    display: none !important;
+}vvvvvvvvvvvvvvvvvvv
 
 /* Style rules for hero image and header */
 .hero {
@@ -125,10 +125,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(#2980b9, 0.5);
+    color: rgba(41, 128, 185, 0.5);
+}
 
-    span { font-size: 2.2rem; }
-} 
+.lower-section span, .upper-section span {
+    font-size: 2.2rem;
+}
 
 .lower-section{
     min-height: 50vh;
@@ -144,19 +146,20 @@ body {
 }
 
 .section-divider:before {
-      content: ""; 
-      width: 6.5rem;
-      height: 6.5rem;
-      background: #FFFFFf;
-      border-radius: 100%;
-      position: absolute;
-      top: -3.25rem;
-      left: calc(50% - 3.25rem);
-      color: rgba(#2980b9, 0.5);
-      line-height: 6rem;
-      text-indent: 1.75rem;
-      font-size: 3rem;
+    content: ""; 
+    width: 6.5rem;
+    height: 6.5rem;
+    background: #FFFFFf;
+    border-radius: 100%;
+    position: absolute;
+    top: -3.25rem;
+    left: calc(50% - 3.25rem);
+    color: rgba(41, 128, 185, 0.5);
+    line-height: 6rem;
+    text-indent: 1.75rem;
+    font-size: 3rem;
 }
+
 .text-center h2 {
     font-size: 1.2rem; /* Slightly reduce heading font size */
 }
@@ -164,6 +167,7 @@ body {
 .text-center h4 {
     font-size: 1.4rem;
 }
+
 main.container-fluid {
     width: 100%;      /* Ensure full width on mobile */
     padding: 0 1rem; /* Add padding to avoid content touching the edges */
@@ -204,11 +208,11 @@ iframe {
 
     /* Tablet Viewport: Show tablet-desktop class, hide mobile class */
     .tablet-desktop {
-        display: block;
+        display: block !important;
     }
 
     .mobile {
-        display: none;
+        display: none !important;
     }
 
     h1 {
@@ -278,11 +282,12 @@ iframe {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: rgba(#2980b9, 0.5);
+        color: rgba(41, 128, 185, 0.5);
+    }
 
-        span { font-size: 2.2rem; }
-    } 
-
+    .lower-section span, .upper-section span {
+        font-size: 2.2rem;
+    }
     .upper-section {
         min-height: 50vh;
         width: 100%;
@@ -322,6 +327,15 @@ iframe {
 
 /* Media Query for Desktop Viewport */
 @media (min-width: 992px) {  
+    
+/* Desktop Viewport: Show tablet-desktop class, hide mobile class */
+.tablet-desktop {
+        display: block !important;
+    }
+
+    .mobile {
+        display: none !important;
+    }
 
     h1 {
         font-size: 3.75rem;
