@@ -8,3 +8,7 @@
 $(document).ready(function(){
     $('.hero').height($(window).height()); 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".text-content").classList.add("show");
+});
