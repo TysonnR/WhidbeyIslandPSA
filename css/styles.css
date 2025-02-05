@@ -54,17 +54,6 @@ h1, h2, h3, h4 {
     font-size: 4em;
 }
 
-.iframe {
-    width: 100%;
-    height: 200px;
-}
-/* Style rule for map */
-.map {
-    border: 2px solid #000;
-    width: 100%;
-    height: 250px;
-}
-
 /* Style rule for labels */
 label {
     display: block;
@@ -125,7 +114,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(41, 128, 185, 0.5);
+    color: rgb(0, 0, 0);
 }
 
 .lower-section span, .upper-section span {
@@ -181,6 +170,11 @@ main.container-fluid {
 .btn {
     font-size: 1rem;     /* Adjust button font size */
     padding: 0.75rem 1rem; /* Adjust button padding */
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.10);
 }
 
 .form-grid {
@@ -193,14 +187,78 @@ main.container-fluid {
     max-width: 90%;         /* Ensure the image doesn't exceed 90% of the viewport width */
 }
 
-iframe {
-    width: 100%;  /* Make the iframe width responsive */
-    height: 250px; /* Reduce the height for better visibility */
-    margin-top: 1rem; /* Add some margin at the top */
-}
-
 .custom-margin-bottom {
     margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px; 
+    margin-top: 20px; 
+    border: 3px solid #0c3158;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+iframe:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.jumbotron {
+    font-size: 3.0rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.jumbotron p {
+    font-size: 1.5rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.jumbotron {
+    position: relative;
+    color: white;
+    padding: 90px 20px;
+}
+
+.jumbotron::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #57ADBF; /* Dark semi-transparent overlay */
+    z-index: 1;
+}
+
+.jumbotron .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Apply the fade-in effect only to the hero section */
+.hero .text-content {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.1s; /* Slight delay for smooth effect */
+}
+
+.hero img {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.1s; /* Logo fades in slightly earlier */
 }
 
 /* Media Query for Tablet Viewport */
@@ -256,12 +314,6 @@ iframe {
         font-size: 6em;
     }
     
-    /* Tablet Viewport: Style rule for map */
-    .map {
-        width: 600px;
-        height: 450px;
-    }
-    
      /* Tablet Viewport: Style rule for form element */
     form {
         width: 90%;
@@ -282,7 +334,7 @@ iframe {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: rgba(41, 128, 185, 0.5);
+        color: rgb(0, 0, 0);
     }
 
     .lower-section span, .upper-section span {
@@ -317,7 +369,7 @@ iframe {
         position: absolute;
         top: -3.25rem;
         left: calc(50% - 3.25rem);
-        color: rgba(41, 128, 185, 0.5); 
+        color: rgb(0, 0, 0); 
         line-height: 6rem;
         text-indent: 1.75rem;
         font-size: 3rem;
@@ -354,7 +406,7 @@ iframe {
     }
     
     p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     header p {
