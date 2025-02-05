@@ -13,7 +13,7 @@
 
 .tablet-desktop {
     display: none !important;
-}vvvvvvvvvvvvvvvvvvv
+}
 
 /* Style rules for hero image and header */
 .hero {
@@ -154,7 +154,7 @@ body {
     position: absolute;
     top: -3.25rem;
     left: calc(50% - 3.25rem);
-    color: rgba(41, 128, 185, 0.5);
+    color: rgba(0, 0, 0, 1);
     line-height: 6rem;
     text-indent: 1.75rem;
     font-size: 3rem;
@@ -317,11 +317,11 @@ iframe {
         position: absolute;
         top: -3.25rem;
         left: calc(50% - 3.25rem);
-        color: rgba(#2980b9, 0.5);
+        color: rgba(41, 128, 185, 0.5); 
         line-height: 6rem;
         text-indent: 1.75rem;
         font-size: 3rem;
-    }
+}
 
 }
 
