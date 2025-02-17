@@ -24,3 +24,12 @@ $(document).ready(function () {
       }
     });
   });
+
+setInterval(() => {
+    const shopButton = document.querySelector(".merch-section .btn");
+    shopButton.classList.add("pulse");
+
+    setTimeout(() => {
+        shopButton.classList.remove("pulse");
+    }, 1000);
+}, 5000); // Pulses every 5 seconds
