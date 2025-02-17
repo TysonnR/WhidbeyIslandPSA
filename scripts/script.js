@@ -25,11 +25,13 @@ $(document).ready(function () {
     });
   });
 
-setInterval(() => {
-    const shopButton = document.querySelector(".merch-section .btn");
-    shopButton.classList.add("pulse");
-
+document.addEventListener("DOMContentLoaded", function () {
+    const merchSection = document.querySelector(".merch-section");
+    merchSection.style.opacity = "0";
+    merchSection.style.transform = "translateY(20px)"; // Starts slightly lower
     setTimeout(() => {
-        shopButton.classList.remove("pulse");
-    }, 1000);
-}, 5000); // Pulses every 5 seconds
+        merchSection.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+        merchSection.style.opacity = "1";
+        merchSection.style.transform = "translateY(0)";
+    }, 500); // Delay for a more natural effect
+});
