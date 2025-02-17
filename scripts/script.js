@@ -12,3 +12,15 @@ $(document).ready(function(){
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".text-content").classList.add("show");
 });
+
+$(document).ready(function () {
+    // Apply smooth scroll to anchor links
+    $('a').on('click', function (event) {
+      if (this.hash !== '') {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 800);
+      }
+    });
+  });
