@@ -313,6 +313,27 @@ iframe:hover {
     background-color: #0056b3;
 }
 
+.underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.merch-section {
+    margin-top: 20px;
+}
+
+.merch-section .btn {
+    background-color: #ffcc00; /* Highlight the button with a different color */
+    border: none;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.merch-section .btn:hover {
+    background-color: #ffb300; /* Slightly darker on hover */
+}
+
 /* Media Query for Tablet Viewport */
 @media (min-width: 768px) {  
 
