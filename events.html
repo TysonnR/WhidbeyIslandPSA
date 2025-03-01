@@ -20,42 +20,56 @@
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-        <title>Whidbey Island PSA | Whidbey Island Puget Sound Anglers</title>
+        <title>Events | Whidbey Island Puget Sound Anglers</title>
     </head>
 
     <body>
 
     <!-- Bootstrap Navigation bar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Whidbey Island PSA</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="index.html">
+          <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50" height="auto">
+      </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
-                </li>
-                <li class="nav-item active">
+          <ul class="navbar-nav ml-auto">
+              <!-- Home -->
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <!-- About -->
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <!-- Events -->
+              <li class="nav-item active">
                   <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="derby-info.html">Derby Info</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-          </div>
+              </li>
+              <!-- Derby -->
+              <li class="nav-item">
+                  <a class="nav-link" href="derby-info.html">Derby</a>
+              </li>
+              <!-- Contact -->
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <!-- Members Dropdown -->
+          <li class="nav-item dropdown" id="membersDropdownItem">
+              <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Members
+              </a>
+              <div class="dropdown-menu" aria-labelledby="membersDropdown">
+                  <a class="dropdown-item" href="sign-up.html">Sign Up</a>
+                  <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+              </div>
+          </li>
+          </ul>
+      </div>
      </nav>
 
     <!-- Header and Hero Image -->
