@@ -20,70 +20,89 @@
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-        <title>Whidbey Island PSA | Whidbey Island Puget Sound Anglers</title>
+        <title>About | Whidbey Island Puget Sound Anglers</title>
     </head>
     <body>
 
     <!-- Bootstrap Navigation bar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Whidbey Island PSA</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
+      </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
-                </li>
-                <li class="nav-item">
+          <ul class="navbar-nav ml-auto">
+              <!-- Home -->
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <!-- About -->
+              <li class="nav-item active">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <!-- Events -->
+              <li class="nav-item">
                   <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="derby-info.html">Derby Info</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-          </div>
+              </li>
+              <!-- Derby -->
+              <li class="nav-item">
+                  <a class="nav-link" href="derby-info.html">Derby</a>
+              </li>
+              <!-- Contact -->
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <!-- Members Dropdown -->
+          <li class="nav-item dropdown" id="membersDropdownItem">
+              <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Members
+              </a>
+              <div class="dropdown-menu" aria-labelledby="membersDropdown">
+                  <a class="dropdown-item" href="sign-up.html">Sign Up</a>
+                  <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+              </div>
+          </li>
+          </ul>
+      </div>
      </nav>
 
     <!-- Header and Hero Image -->
-    <header class="jumbotron-fluid hero2">
+    <header class="jumbotron-fluid hero2 ">
       <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 50vh; position: relative;">
         <div class="text-center text-white position-absolute">
           <h1 class="display-3">About Us</h1>
         </div>
-        <img src="images/fishergroup-shore.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute" style="object-fit: cover; top: 0; left: 0;">
+        <img src="images/fishergroup-shore.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute no-border" style="object-fit: cover; top: 0; left: 0;">
       </div>
     </header>
 
+    <header class="jumbotron jumbotron-lower jumbotron-fluid text-center">
+      <div class="container">
+          <p>About</p>
+          <p class="lead">Join us as we work towards promoting sustainable fishing practices and providing opportunities for the community to connect, learn, and grow.</p>
+      </div>
+    </header>
 
      <!-- Main Content Area -->
-     <section id="about-us">
       <main class="container-fluid w-75">
       <!-- First Row (Text on Left, Image on Right) -->
-        <div class="row align-items-center full-height-row bg-light">
-          <div class="col-md-7 d-flex flex-column mt-3 mb-3justify-content-center full-height">
+      <div class="row align-items-center image-row">
+        <div class="col-md-7 d-flex flex-column justify-content-center">
             <h3>What we're about!</h3>
             <p>We are the Whidbey Island Puget Sound Anglers, committed to preserving fisheries, enhancing habitat, and offering scholarships for aspiring environmental students focused on Salmon Recovery. Though not the first group on Whidbey Island, we strive to make it the best, hosting monthly speakers on opportunities, regulation changes (WDFW), and advocating for more time on the water!</p>
-          </div>
-          <div class="col-md-5">
-            <img src="images/about-us-en.jpg" alt="Our members catching huge fish" class="img-fluid rounded custom-margin-bottom">
-          </div>
         </div>
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+            <img src="images/about-us-en.jpg" alt="Our members catching huge fish" class="img-fluid rounded custom-margin-bottom mt-3">
+        </div>
+      </div>
 
         <!-- Second Row (Image on Left, Text on Right) -->
-          <div class="row align-items-center mb-3 mt-3 full-height-row">
+          <div class="row align-items-center mb-3 mt-3 full-height-row bg-light">
             <div class="col-md-6 order-md-2">
               <h3>Our Mission</h3>
               <p>We’re a new chapter of passionate anglers, and we’d love for you to be part of our growing community! Join us at the American Legion every first Wednesday of the month at 6:30 PM. Together, we can make a difference in preserving salmon fishing opportunities. Your involvement is key—without you, there is no us. Let’s work together for a stronger, more connected fishing community!</p>
@@ -92,28 +111,85 @@
               <img src="images/american-legion.jpg" alt="Our mission to preserve fishing" class="img-fluid rounded custom-margin-bottom">
             </div>
           </div>
-      
-          <!-- Third Row (Text on Left, Image on Right) -->
-          <div class="row align-items-center bg-light">
-            <div class="col-md-6 d-flex flex-column mt-3 mb-3 justify-content-center">
-              <h3>Our Board Members</h3>
-              <ul class="list-group">
-                <li class="list-group-item"><strong>Tim Hicks – President</strong><br>Chairs board and general meetings, represents the club at local events, and leads key initiatives like the annual fundraiser and Kids Fishing Day. Promotes community engagement and sustainable fishing practices.</li>
-                <li class="list-group-item"><strong>Mike Garcia – Vice President</strong><br>Presides over meetings in the President’s absence, coordinates speaker arrangements for general meetings, and supports major events like the fundraiser and Kids Fishing Day. Facilitates member engagement and event planning.</li>
-                <li class="list-group-item"><strong>Wendell Bunch – Secretary</strong><br>Manages club communications, takes meeting notes, and ensures members are informed about upcoming events and regulatory updates. Handles correspondence and maintains membership records.</li>
-                <li class="list-group-item"><strong>Greg Ringelstetter – Treasurer</strong><br>Oversees financial planning, budgeting, and reporting for the club. Manages funds for events like the annual Coho Derby and ensures compliance with tax and financial obligations.</li>
-                <li class="list-group-item"><strong>Robert Harless – Tournaments/Raffle Coordinator</strong><br>Organizes fishing tournaments and raffle events to engage members and the community. Manages raffle ticket sales, prize acquisitions, and financial reporting for these activities.</li>
-              </ul>
+
+          <section id="board-members" class="container py-5">
+            <h2 class="text-center mb-4">Meet Our Board Members</h2>
+            <div class="row">
+                <!-- President -->
+                <div class="col-md-4 text-center">
+                    <div class="card shadow-lg">
+                        <img src="images/tim-hicks.jpg" class="card-img-top rounded-circle mt-3 mx-auto" alt="Tim Hicks - President" style="width: 200px; height: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Tim Hicks</h4>
+                            <p class="card-text"><strong>President</strong></p>
+                            <p><strong>Duties:</strong> Tim chairs board meetings, oversees the club's overall direction, and leads major events such as the annual fundraiser and Kids Fishing Day. He ensures that the club stays active in the community and promotes sustainable fishing practices.</p>
+                        </div>
+                        <!-- Card Footer with Color Bar -->
+                        <div class="card-footer" style="background-color: #ebe8e8; height: 5px;"></div>
+                    </div>
+                </div>
+        
+                <!-- Vice President -->
+                <div class="col-md-4 text-center">
+                    <div class="card shadow-lg">
+                        <img src="images/mike-garcia.jpg" class="card-img-top rounded-circle mt-3 mx-auto" alt="Mike Garcia - Vice President" style="width: 200px; height: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Mike Garcia</h4>
+                            <p class="card-text"><strong>Vice President</strong></p>
+                            <p><strong>Duties:</strong> Mike presides over meetings in the absence of the President, coordinates guest speakers for club events, and supports the planning and execution of key events like the annual fundraiser and Kids Fishing Day. His role is critical in keeping the club’s activities running smoothly.</p>
+                        </div>
+                        <!-- Card Footer with Color Bar -->
+                        <div class="card-footer" style="background-color: #ebe8e8; height: 5px;"></div>
+                    </div>
+                </div>
+        
+                <!-- Treasurer -->
+                <div class="col-md-4 text-center">
+                    <div class="card shadow-lg">
+                        <img src="images/greg-ringelstetter.jpg" class="card-img-top rounded-circle mt-3 mx-auto" alt="Greg Ringelstetter - Treasurer" style="width: 200px; height: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Greg Ringelstetter</h4>
+                            <p class="card-text"><strong>Treasurer</strong></p>
+                            <p><strong>Duties:</strong> Greg is responsible for managing the club’s finances, including budgeting, financial reporting, and ensuring that the club’s funds are used responsibly. He oversees financial aspects of events, such as the Coho Derby, and ensures compliance with tax and financial regulations.</p>
+                        </div>
+                        <!-- Card Footer with Color Bar -->
+                        <div class="card-footer" style="background-color: #ebe8e8; height: 5px;"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <img src="images/wipsa-logo-jumbo3.png" alt="WIPSA logo" class="img-fluid rounded custom-margin-bottom no-border">
-              <p>Wanna stay better connected with our community? Join our members only community forum!</p>
-              <a href="https://whidbeypsa.freeforums.net/" role="button" class="btn btn-outline-secondary btn-lg bg-dark text-white">Members Forum</a>
+        
+            <div class="row justify-content-center">
+                <!-- Secretary -->
+                <div class="col-md-4 text-center mt-3">
+                    <div class="card shadow-lg">
+                        <img src="images/wendell-bunch.jpg" class="card-img-top rounded-circle mt-3 mx-auto" alt="Wendell Bunch - Secretary" style="width: 200px; height: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Wendell Bunch</h4>
+                            <p class="card-text"><strong>Secretary</strong></p>
+                            <p><strong>Duties:</strong> Wendell is responsible for managing club communications, taking meeting notes, and ensuring that members are kept informed about upcoming events and updates. He handles all correspondence and maintains accurate membership records to keep the club organized and connected.</p>
+                        </div>
+                        <!-- Card Footer with Color Bar -->
+                        <div class="card-footer" style="background-color: #ebe8e8; height: 5px;"></div>
+                    </div>
+                </div>
+        
+                <!-- Tournaments/Raffle Coordinator -->
+                <div class="col-md-4 text-center mt-3">
+                    <div class="card shadow-lg">
+                        <img src="images/faceless.jpg" class="card-img-top rounded-circle mt-3 mx-auto" alt="Robert Harless - Tournaments/Raffle Coordinator" style="width: 200px; height: 200px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Robert Harless</h4>
+                            <p class="card-text"><strong>Tournaments/Raffle Coordinator</strong></p>
+                            <p><strong>Duties:</strong> Robert organizes and manages all club tournaments and raffle events, from securing prizes to handling ticket sales. He plays a key role in ensuring that these events are successful, enjoyable, and well-executed for members and participants.</p>
+                        </div>
+                        <!-- Card Footer with Color Bar -->
+                        <div class="card-footer" style="background-color: #ebe8e8; height: 5px;"></div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
           
         </main>
-      </section>
     <hr class="my-5">
 
      <!-- Footer -->
@@ -129,8 +205,7 @@
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="scripts/script.js"></script>
     </body>
