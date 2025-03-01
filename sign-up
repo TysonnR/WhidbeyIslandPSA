@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Whidbey Island Puget Sound Anglers is an organization dedicated to preserving quality fisheries, enhancing habitat and fishing opportunities.">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Style Sheet -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+        <title>Sign Up | Whidbey Island Puget Sound Anglers</title>
+    </head>
+    <body>
+
+    <!-- Bootstrap Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <!-- Events -->
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <!-- Derby -->
+                <li class="nav-item">
+                    <a class="nav-link" href="derby-info.html">Derby</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <!-- Members Dropdown -->
+            <li class="nav-item dropdown active" id="membersDropdownItem">
+                <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Members
+                </a>
+                <div class="dropdown-menu" aria-labelledby="membersDropdown">
+                    <a class="dropdown-item" href="sign-up.html">Sign Up</a>
+                    <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header and Hero Image -->
+    <header class="jumbotron-fluid hero2">
+        <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 50vh; position: relative;">
+            <img src="images/wipsa3-t.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute no-border" style="object-fit: cover; top: 0px; left: 0;">
+        </div>
+    </header>
+
+    <!-- Smaller header with page info-->
+    <header class="jumbotron jumbotron-lower jumbotron-fluid text-center">
+        <div class="container">
+            <h3>Why Become A Member?</h3>
+            <p class="lead">Join a community of anglers passionate about Halibut and Salmon fishing while supporting Puget Sound’s marine ecosystem. Your membership helps fund conservation efforts, educational programs, and community initiatives. Connect with fellow anglers, share experiences, and access expert insights, our members' forum, and special projects. Together, we can preserve healthy fisheries and protect these waters for future generations.</p>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main class="container-fluid w-75">
+    <section id="sign-up">
+            <!-- Benefits, Payment Methods, and Form -->
+            <div class="row">
+                <!-- Right Column: Sign-Up Form -->
+                <div class="col-md-6 mt-1" id="members-form">
+                    <div class="form-container">
+                        <h3 class="text-center">Online Membership Payment</h3>
+                        <form>
+                            <!-- Full Name -->
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" class="form-control" id="fullname" name="fullname" required>
+                            </div>
+    
+                            <!-- Email Address -->
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+    
+                            <!-- Phone Number -->
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+    
+                            <!-- Address -->
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" required>
+                            </div>
+    
+                            <!-- Boat Make & Size -->
+                            <div class="form-group">
+                                <label for="boatmakesize">Boat Make & Size</label>
+                                <input type="text" class="form-control" id="boatmakesize" name="boatmakesize" placeholder="e.g. 20-foot Boston Whaler Dauntless" required>
+                            </div>
+    
+                            <!-- Boat Name -->
+                            <div class="form-group">
+                                <label for="boatname">Boat Name</label>
+                                <input type="text" class="form-control" id="boatname" name="boatname" placeholder="e.g. Pier Pressure" required>
+                            </div>
+    
+                            <!-- Membership Type Dropdown -->
+                            <div class="form-group">
+                                <label for="membership">Membership Type</label>
+                                <select class="form-control" id="membership" name="membership" required>
+                                    <option value="" disabled selected>Select Membership Type</option>
+                                    <option value="single">Single Membership - $35/year</option>
+                                    <option value="family">Family Membership (Husband and Wife) - $40/year</option>
+                                </select>
+                            </div>
+                                
+                            <!-- Agreement Checkbox -->
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="agree" name="agree" required>
+                                <label class="form-check-label" for="agree">I agree to the terms and conditions.</label>
+                            </div>
+    
+                            <!-- PayPal Button -->
+                            <div class="paypal-button mt-4">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                 <!-- Left Column: Membership Benefits -->
+                <div class="col-md-6 mb-5">
+                    <div class="mt-5">
+                        <h3 class="text-center">Benefits of Membership</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">A seat at the table with Puget Sound Anglers State President Ron Garner! As our representative, he liaises with WDFW, Tribal Communities, and Hatchery Programs.</li>
+                            <li class="list-group-item">Access to expert speakers, including guide services and experienced fishermen and women.</li>
+                            <li class="list-group-item">Access to exclusive fishing events and tournaments.</li>
+                            <li class="list-group-item">Opportunities to help shape fishing regulations and advocate for policies that benefit our community.</li>
+                            <li class="list-group-item">Fighting for more fishing opportunities and sustainable fisheries.</li>
+                            <li class="list-group-item">Learning from fellow anglers about crabbing, shrimping, Halibut, Ling Cod, bottom fishing, and Salmon techniques and hotspots.</li>
+                            <li class="list-group-item">Being a part of reopening Black Rockfish opportunities.</li>
+                            <li class="list-group-item">Access to our members only forum.</li>
+                            <li class="list-group-item">And much more!</li>
+                        </ul>
+
+                        <!-- Pay by Mail or In-Person -->
+                        <section class="payment-section mt-5">
+                            <h3 class="text-center">Pay Online, by Mail, or at a Meeting</h3>
+                            <p>Please complete a membership application and either mail it or bring it to a meeting...</p>
+                            <div class="text-center">
+                                <a href="images/membership-app.doc" download class="btn btn-outline-secondary btn-lg bg-dark text-white">Download Membership Application</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center bg-light mt-5">
+                <div class=" donate-section col-md-7 mt-5">
+                    <h3 class="text-center">Donate to Help Protect Salmon</h3>
+                    <p>Your generous donation supports vital conservation efforts aimed at protecting salmon populations and their habitats. Help us safeguard Puget Sound's marine ecosystem and ensure the survival of these iconic species for future generations.</p>
+                    <p class="text-center">
+                        <a href="https://www.paypal.com/donate?hosted_button_id=AU6IZiRtVi_TvMOH2PoBcR2joNf7j5tquTvshW-Vd_RDcSyuNi91QLx_aUR805O777LbPtLFi9l2qwgp" class="btn btn-outline-secondary btn-lg bg-dark text-white" target="_blank">Donate Now</a>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="images/salmon-hatchery.jpg" alt="Salmon in Puget Sound" class="img-fluid rounded">
+                </div>
+            </div>
+        </section>
+    </main>
+    <hr class="my-5">
+
+    <!-- Footer -->
+    <footer class="jumbotron-fluid text-center bg-dark p-5">
+        <div class="container text-white">
+            <p>&copy; Copyright 2025. All Rights Reserved.</p>
+            <p><a href="mailto:whidbeyislandpsa@gmail.com" class="text-white">whidbeypsa@gmail.com</a></p>
+            <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank"><img src="images/facebook-logo.png" alt="black and white Facebook logo" class="pr-4"></a>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AU6IZiRtVi_TvMOH2PoBcR2joNf7j5tquTvshW-Vd_RDcSyuNi91QLx_aUR805O777LbPtLFi9l2qwgp&currency=USD&disable-funding=card,paylater"></script>
+    <script src="scripts/script.js"></script>
+
+    </body>
+</html>
