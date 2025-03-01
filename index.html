@@ -13,48 +13,62 @@
         <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
         <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
         <!-- Style Sheet -->
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-        <title>Whidbey Island PSA  | Whidbey Island Puget Sound Anglers</title>
+        <title>Home | Whidbey Island Puget Sound Anglers</title>
     </head>
     <body>
 
     <!-- Bootstrap Navigation bar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Whidbey Island PSA</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
+        </a>
 
-    <!-- Hamburger Icon-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-    <!-- Navbar Links -->
+
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                <!-- Home -->
                 <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="derby-info.html">Derby Info</a>
-                </li>
+                <!-- About -->
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
+                <!-- Events -->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
+                    <a class="nav-link" href="events.html">Events</a>
                 </li>
+                <!-- Derby -->
+                <li class="nav-item">
+                    <a class="nav-link" href="derby-info.html">Derby</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <!-- Members Dropdown -->
+            <li class="nav-item dropdown" id="membersDropdownItem">
+                <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Members
+                </a>
+                <div class="dropdown-menu" aria-labelledby="membersDropdown">
+                    <a class="dropdown-item" href="sign-up.html">Sign Up</a>
+                    <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+                </div>
+            </li>
             </ul>
-            </div>
+        </div>
      </nav>
         
     <!-- Header and Hero Image --> 
@@ -90,7 +104,8 @@
         </div>
     </header>
 
-    <main class="container-fluid mt-7">
+    <!-- Main Content Area -->
+    <main class="container-fluid">
     <div class="upper-section mb-5">
         <div class="row">
             <!-- Column for the carousel -->
@@ -104,6 +119,7 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -127,6 +143,9 @@
                         <div class="carousel-item">
                             <img class="d-block w-100" src="images/community-slide7.png" alt="Seventh slide">
                         </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/community-slide8.png" alt="Eighth slide">
+                        </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -140,46 +159,66 @@
             </div>
 
             <!-- Column for the text content -->
-            <div class="col-md-6 mt-1 pt-3 d-flex flex-column justify-content-center">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
                 <h2> Pride of the Catch </h2>
                 <p>Our members reel in more than just fish—they capture moments of excitement, achievement, and camaraderie. These snapshots celebrate the skill, dedication, and community spirit that make Whidbey Island fishing adventures unforgettable!</p>
                 <p>Want to see your catch featured? Share your photos with us and join the celebration of Whidbey Island’s finest anglers!</p>
             </div>
         </div>
     </div>
-    <hr class="my-7">
 
     <!-- Lower section with more content -->
-    <div class="lower-section section-divider mt-5">
-        <div class="row">
-            <div class="col-sm-4">
-                <figure class="frame">
-                    <a href="about.html"><img src="images/wipsa-logo-jumbodirect.png" alt="Whidbey Island Puget Sound Anglers logo" class="img-fluid"></a>
-                </figure>
-                <h3>Whidbey Island's Puget Sound Anglers</h3>
-                <p>We invite you to enjoy all there is of fishing, here in the Great Northwest! Whether you're into Halibut, Salmon, Ling Cod, crabbing or shrimping, we love doing it all. If you're a new-comer or not, we have a place for you to educate or be educated on Areas 8-1, 8-2, 9, or even Canada, and what it entails to fish these great fisheries!</p>
+    
+        <div class="container-fluid w-75">
+            <!-- First Row: Whidbey Island's Puget Sound Anglers -->
+            <div class="row align-items-center image-row">
+                <div class="col-md-7 d-flex flex-column justify-content-center">
+                    <h3>Whidbey Island's Puget Sound Anglers</h3>
+                    <p>We invite you to enjoy all there is of fishing, here in the Great Northwest! Whether you're into Halibut, Salmon, Ling Cod, crabbing or shrimping, we love doing it all. If you're a new-comer or not, we have a place for you to educate or be educated on Areas 8-1, 8-2, 9, or even Canada, and what it entails to fish these great fisheries!</p>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <figure class="frame">
+                        <a href="about.html">
+                            <img src="images/wipsa-logo-row.png" alt="Whidbey Island Puget Sound Anglers logo" class="img-fluid">
+                        </a>
+                    </figure>
+                </div>
             </div>
 
-            <div class="col-sm-4">
+            <!-- Second Row: Whidbey Island Coho Derby -->
+        <div class="row align-items-center mb-3 mt-3 full-height-row bg-light">
+            <div class="col-md-5 d-flex justify-content-center align-items-center">
                 <figure class="frame">
-                    <a href="derby-info.html"><img src="images/whidbey-coho-derby.png" alt="Whidbey Island COHO Derby Logo" class="img-fluid"></a>
+                    <a href="derby-info.html">
+                        <img src="images/coho-derby-row.jpg" alt="Whidbey Island COHO Derby Logo" class="img-fluid">
+                    </a>
                 </figure>
+            </div>
+            <div class="col-md-7 d-flex flex-column justify-content-center">
                 <h3>Whidbey Island Coho Derby!</h3>
                 <p class="lead">2nd Annual derby is September 13th & 14th, 2025.</p>
                 <p>Top 3 Anglers and mystery fish need not be present to win. All raffle prize drawings will be held at Fort Casey, and must be present.</p>
                 <p>Weigh Stations located at Fort Casey State Park (Coupeville), and Bayside Marine, (Everett)</p>
                 <p class="small">Ticket sales open 6/1/2025.</p>
             </div>
+        </div>
 
-            <div class="col-sm-4">
-                <figure class="frame">
-                    <a href="events.html"><img src="images/fish-hook-events.png" alt="Fish hook with event schedule" class="img-fluid"></a>
-                </figure>
-                <h3>Events</h3>
-                <p>Want to explore the Great Northwest fisheries? Our events include derbies, and monthly meetings to discuss fishing opportunities, regulation changes (WDFW), and fight for more time out on the water!</p>
+            <!-- Third Row: Events -->
+            <div class="row align-items-center mb-3 mt-3">
+                <div class="col-md-7 d-flex flex-column justify-content-center">
+                    <h3>Events</h3>
+                    <p>Want to explore the Great Northwest fisheries? Our events include derbies, and monthly meetings to discuss fishing opportunities, regulation changes (WDFW), and fight for more time out on the water!</p>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <figure class="frame">
+                        <a href="events.html">
+                            <img src="images/fish-hook-events.png" alt="Fish hook with event schedule" class="img-fluid">
+                        </a>
+                    </figure>
+                </div>
             </div>
         </div>
-    </div>
+    
 
     <hr class="my-5">
     </main>
@@ -197,7 +236,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
     </body>
