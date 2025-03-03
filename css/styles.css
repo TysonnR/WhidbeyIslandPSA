@@ -17,32 +17,30 @@
 
 /* Style rules for hero image and header */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/dec-pass-final-img2.jpg); 
+    background-image: linear-gradient(rgba(12, 12, 12, 0.5), rgba(0, 0, 0, 0.5)),url(../images/dec-pass-final-img2.jpg); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/* Set the image as the background for the header */
-.hero2 {
-    background-size: cover;        /* Ensure the image covers the entire header */
-    background-position: center;   /* Center the background image */
-    height: 50vh;                 /* Make the header take up the entire viewport height */
-  }
   
-  .hero2 h1, .hero p {
+.hero2 h1, .hero p {
     z-index: 2;               /* Ensure the text stays on top of the image */
     position: relative;       /* Allow text to sit above the image */
-  }
+}
   
   /* Optional: Adjusting the text color or shadow for better visibility */
-  .hero2 h1 {
+.hero2 h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow to make text stand out */
   }
   
-  .hero2 p {
+.hero2 p {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for the paragraph */
   }
+
+.hero2 {
+    height: 25vh; 
+    margin-bottom: 110px
+}
 
 h1, h2, h3, h4 {
     font-family: 'Inter', sans-serif;
@@ -251,7 +249,8 @@ iframe:hover {
     animation: fadeIn 1s ease-in-out;
     position: relative;
     color: white;
-    padding: 90px 20px;
+    padding: 80px 20px;
+
 }
 
 .jumbotron-lower {
@@ -386,6 +385,83 @@ iframe:hover {
     transform: scale(1.05);
     background-color: #0077b3;
 }
+
+/* Membership Images */
+.membership-img {
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 180px;
+    height: 160px;
+    
+}
+
+/* Smooth Scroll for 'Join Now' Button */
+.scroll-to {
+    scroll-behavior: smooth;
+}
+
+img {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #03051d;
+
+}
+
+/* Membership Section Layout */
+.membership-section {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* General Card Styling */
+.payment-card, .info-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    min-height: 100%;
+}
+
+/* Form Inputs */
+.membership-form .form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* PayPal Button Area */
+.paypal-button {
+    text-align: center;
+}
+
+/* Address Box */
+.address-box {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Download Button */
+.download-btn {
+    background-color: #03051d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #03051d;
+}
+
+.d-flex {
+    display: block;
+}
+
+
 
 /* Media Query for Tablet Viewport */
 @media (min-width: 768px) {  
@@ -547,6 +623,9 @@ iframe:hover {
         margin-bottom: 0; /* Optional: removes default margin at the bottom of the row */
     }
     
+    .hero2 {
+        height: 40vh; 
+    }
 }
 
 /* Media Query for Desktop Viewport */
@@ -691,6 +770,55 @@ iframe:hover {
         opacity: 1;
         box-shadow: 8px 8px 10px #808080;
         transform: translateY(10px);
+    }
+
+    /* Set the image as the background for the header */
+    .hero2 {
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        margin-bottom: 0px;
+    }
+
+    .hero2 img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px; 
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Membership Pricing Card */
+    .membership-card {
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+    }
+
+    /* Membership Option Styling */
+    .membership-option {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    /* Membership Images */
+    .membership-img {
+        width: 237px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+    
+    .flex-column {
+        flex-direction: column;
     }
 
 }
