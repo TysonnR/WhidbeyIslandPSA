@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Tyson Ringelstetter, 11/13/2024 -->
 <html lang="en">
     <head>
         <!-- Required Meta Tags -->
@@ -13,57 +14,77 @@
         <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- PayPal Cart Button -->
+        <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="SRWGU9DEE64X6"></script>
+
+        <!-- Google Fonts - Using Open Sans and Montserrat as defined in CSS variables -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
         <!-- Style Sheet -->
         <link rel="stylesheet" href="css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/membership-form.css">
 
         <title>Sign Up | Whidbey Island Puget Sound Anglers</title>
     </head>
-    <body>
-
+    <body>  
+        
         <!-- Bootstrap Navigation bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
             <a class="navbar-brand" href="index.html">
-                <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
+                <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="65">
             </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link font-medium" href="index.html">Home</a>
                     </li>
                     <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link font-medium" href="about.html">About</a>
                     </li>
                     <!-- Events -->
                     <li class="nav-item">
-                        <a class="nav-link" href="events.html">Events</a>
+                        <a class="nav-link font-medium" href="events.html">Events</a>
                     </li>
                     <!-- Derby -->
                     <li class="nav-item">
-                        <a class="nav-link" href="derby-info.html">Derby</a>
+                        <a class="nav-link font-medium" href="derby-info.html">Derby</a>
                     </li>
                     <!-- Contact -->
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link font-medium" href="contact.html">Contact</a>
                     </li>
                     <!-- Members Dropdown -->
                     <li class="nav-item dropdown active" id="membersDropdownItem">
-                        <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle font-semibold" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Members
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="membersDropdown">
-                            <a class="dropdown-item" href="sign-up.html">Sign Up</a>
-                            <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+                        <ul class="dropdown-menu" aria-labelledby="membersDropdown">
+                            <li><a class="dropdown-item active" href="sign-up.html">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a></li>
+                        </ul>
+                    </li>
+                    <!-- PayPal Cart Button -->
+                    <li class="nav-item">
+                        <div class="nav-link cart-button-container">
+                            <paypal-cart-button data-id="navbar-cart"></paypal-cart-button>
+                            <script>
+                                cartPaypal.Cart({ id: "navbar-cart" })
+                            </script>
                         </div>
                     </li>
                 </ul>
@@ -71,209 +92,368 @@
         </nav>
 
         <!-- Header and Hero Image -->
-        <header class="jumbotron-fluid hero2">
-            <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 50vh; position: relative;">
-                <img src="images/wpsaheader1.2.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute no-border">
-            </div>
+        <header class="hero-container-signup">
+            <img src="images/signup-header-sponsor.jpg" alt="Sign up today!" class="img-fluid">
         </header>
 
-        <!-- Smaller header with page info-->
-        <header class="jumbotron jumbotron-lower jumbotron-fluid text-center">
+        <!-- Secondary Header -->
+        <header class="section-gray py-4 text-center">
             <div class="container">
-                <p>Why Become A Member?</p>
-                <p class="lead">Join a community of anglers passionate about Halibut and Salmon fishing while supporting Puget Sound’s marine ecosystem. Your membership helps fund conservation efforts, educational programs, and community initiatives. Connect with fellow anglers, share experiences, and access expert insights, our members' forum, and special projects. Together, we can preserve healthy fisheries and protect these waters for future generations.</p>
+                <p class="text-primary font-semibold mb-2 uppercase letter-spacing-wide">Why Become A Member?</p>
+                <p class="lead mb-0">Join a community of anglers passionate about Halibut and Salmon fishing while supporting Puget Sound's marine ecosystem. Your membership helps fund conservation efforts, educational programs, and community initiatives. Connect with fellow anglers, share experiences, and access expert insights, our members' forum, and special projects. Together, we can preserve healthy fisheries and protect these waters for future generations.</p>
             </div>
         </header>
 
-        <!-- Main content section -->
-        <main class="container-fluid w-75 my-5">
-            <section id="sign-up">
-                <div class="row">
-                    <!-- Left Column: Membership Benefits -->
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h3 class="card-title text-center">Benefits of Membership</h3>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">A seat at the table with Puget Sound Anglers State President Ron Garner! As our representative, he liaises with WDFW, Tribal Communities, and Hatchery Programs.</li>
-                                    <li class="list-group-item">Access to expert speakers, including guide services and experienced fishermen and women.</li>
-                                    <li class="list-group-item">Access to exclusive fishing events and tournaments.</li>
-                                    <li class="list-group-item">Opportunities to help shape fishing regulations and advocate for policies that benefit our community.</li>
-                                    <li class="list-group-item">Fighting for more fishing opportunities and sustainable fisheries.</li>
-                                    <li class="list-group-item">Learning from fellow anglers about crabbing, shrimping, Halibut, Ling Cod, bottom fishing, and Salmon techniques and hotspots.</li>
-                                    <li class="list-group-item">Being a part of reopening Black Rockfish opportunities.</li>
-                                    <li class="list-group-item">Access to our members-only forum.</li>
-                                    <li class="list-group-item">And much more!</li>
-                                </ul>
+        <!-- Main Content Area -->
+        <main>
+            <!-- Benefits & Pricing Section -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <!-- Left Column: Membership Benefits -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h2 class="font-semibold text-primary mb-4 text-center">Benefits of Membership</h2>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>A seat at the table with Puget Sound Anglers State President Ron Garner! As our representative, he liaises with WDFW, Tribal Communities, and Hatchery Programs.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Access to expert speakers, including guide services and experienced fishermen and women.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Access to exclusive fishing events and tournaments.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Opportunities to help shape fishing regulations and advocate for policies that benefit our community.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Fighting for more fishing opportunities and sustainable fisheries.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Learning from fellow anglers about crabbing, shrimping, Halibut, Ling Cod, bottom fishing, and Salmon techniques and hotspots.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Being a part of reopening Black Rockfish opportunities.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>Access to our members-only forum.</span>
+                                        </li>
+                                        <li class="list-group-item d-flex py-3">
+                                            <i class="fas fa-check-circle text-primary me-3 mt-1"></i>
+                                            <span>And much more!</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Right Column: Membership Pricing -->
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm p-4" style="background-color: #f8f9fa;">
-                            <div class="card-body text-center">
-                                <h3 class="card-title">Membership Pricing</h3>
-                                <div class="row text-center">
-                                    <div class="col-md-6">
-                                        <div class="card shadow-sm p-3">
-                                            <img src="images/single-membership.PNG" class="img-fluid rounded mb-2" alt="Single Membership">
-                                            <h5>Single Membership</h5>
-                                            <p>$35/year</p>
+                        <!-- Right Column: Membership Pricing -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 border-0 shadow-sm bg-light">
+                                <div class="card-body p-4">
+                                    <h2 class="font-semibold text-primary mb-4 text-center">Membership Pricing</h2>
+                                    <div class="row g-4 justify-content-center mb-4">
+                                        <div class="col-md-6">
+                                            <div class="card h-100 border-0 shadow-sm text-center">
+                                                <div class="card-body p-4">
+                                                    <img src="images/single-membership.PNG" class="img-fluid rounded mb-3" alt="Single Membership">
+                                                    <h3 class="h4 font-semibold text-primary">Single Membership</h3>
+                                                    <div class="pricing mb-3">
+                                                        <span class="h3 font-bold">$35</span>
+                                                        <span class="text-secondary">/year</span>
+                                                    </div>
+                                                    <p class="text-muted mb-0">Perfect for individual anglers</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100 border-0 shadow-sm text-center">
+                                                <div class="card-body p-4">
+                                                    <img src="images/family-membership.PNG" class="img-fluid rounded mb-3" alt="Family membership">
+                                                    <h3 class="h4 font-semibold text-primary">Family Membership</h3>
+                                                    <div class="pricing mb-3">
+                                                        <span class="h3 font-bold">$40</span>
+                                                        <span class="text-secondary">/year</span>
+                                                    </div>
+                                                    <p class="text-muted mb-0">For the whole family</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="card shadow-sm p-3">
-                                            <img src="images/family-membership.PNG" class="img-fluid rounded mb-2" alt="Family membership">
-                                            <h5>Family Membership</h5>
-                                            <p>$40/year</p>
-                                        </div>
+                                    <!-- Call to Action (Button) -->
+                                    <div class="text-center">
+                                        <a href="#paypal-payment" class="btn btn-primary btn-lg px-5" id="join-now-button">
+                                            <i class="fas fa-user-plus me-2"></i>Join Now
+                                        </a>                                      
                                     </div>
-                                </div>
-                                <!-- Call to Action (Button) -->
-                                <div class="text-center mt-4">
-                                    <a href="#paypal-payment" class="btn btn-outline-secondary btn-lg bg-dark text-white scroll-to">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PayPal Payment and Payment Options (in one row) -->
-                <div class="row">
-                    <!-- Left Column: Online Payment Form -->
-                    <div class="col-md-6 mb-4" id="paypal-payment">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h3 class="text-center">Online Membership Payment</h3>
-                                <form class="membership-form">
-                                    <!-- Full Name -->
-                                    <div class="form-group">
-                                        <label for="fullname">Full Name</label>
-                                        <input type="text" class="form-control" id="fullname" name="fullname" required>
-                                    </div>
-                
-                                    <!-- Email Address -->
-                                    <div class="form-group">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                
-                                    <!-- Phone Number -->
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" required>
-                                    </div>
-                
-                                    <!-- Address -->
-                                    <div class="form-group">
-                                        <label for="address">Address</label>
-                                        <input type="text" class="form-control" id="address" name="address" required>
-                                    </div>
-                
-                                    <!-- Boat Make & Size -->
-                                    <div class="form-group">
-                                        <label for="boatmakesize">Boat Make & Size</label>
-                                        <input type="text" class="form-control" id="boatmakesize" name="boatmakesize" placeholder="e.g. 20-foot Boston Whaler Dauntless" required>
-                                    </div>
-                
-                                    <!-- Boat Name -->
-                                    <div class="form-group">
-                                        <label for="boatname">Boat Name</label>
-                                        <input type="text" class="form-control" id="boatname" name="boatname" placeholder="e.g. Pier Pressure" required>
-                                    </div>
-                
-                                    <!-- Membership Type Dropdown -->
-                                    <div class="form-group">
-                                        <label for="membership">Membership Type</label>
-                                        <select class="form-control form-control-sm" id="membership" name="membership" required>
-                                            <option value="" disabled selected>Select Membership Type</option>
-                                            <option value="single">Single Membership - $35/year</option>
-                                            <option value="family">Family Membership - $40/year</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- Agreement Checkbox -->
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="agree" name="agree" required>
-                                        <label class="form-check-label" for="agree">I agree to the terms and conditions.</label>
-                                    </div>
-                
-                                    <!-- PayPal Button -->
-                                    <div class="paypal-button text-center mt-3">
-                                        <div id="paypal-button-container"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Payment Options -->
-                    <div class="col-md-6 mb-4">
-                        <div class="d-flex flex-column justify-content-between h-100">
-                            <!-- Pay Online Section -->
-                            <div class="card mb-3 shadow-sm">
-                                <div class="card-body text-center">
-                                    <h4>Pay Online</h4>
-                                    <p class="card-text">Pay securely using PayPal.</p>
-                                    <p>Proceed with the payment by filling out the form on the left.</p>
-                                </div>
-                            </div>
-
-                            <!-- Pay by Mail Section -->
-                            <div class="card mb-3 shadow-sm">
-                                <div class="card-body text-center">
-                                    <h4>Pay by Mail</h4>
-                                    <p class="card-text">If you wish to pay by mail, download the application and mail it to:</p>
-                                    <p><strong>Whidbey Island - Chapter PSA</strong></p>
-                                    <p>PO Box 1882, Oak Harbor, WA 98277</p>
-                                    <a href="images/membership-app.doc" download class="btn btn-outline-secondary btn-lg bg-dark text-white">Download Membership Application</a>
-                                </div>
-                            </div>
-
-                            <!-- Pay at a Meeting Section -->
-                            <div class="card shadow-sm">
-                                <div class="card-body text-center">
-                                    <h4>Pay at a Meeting</h4>
-                                    <p class="card-text">Download and bring the application form to a meeting.</p>
-                                    <p>If you're paying at a meeting, check our events page to find out when the meetings are.</p>
-                                    <a href="images/membership-app.doc" download class="btn btn-outline-secondary btn-lg bg-dark text-white">Download Membership Application</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- Donate Section -->
+            
+            <!-- Payment Options Section -->
             <section>
-                <div class="row align-items-center bg-light mt-5">
-                    <div class="col-md-7 mt-5">
-                        <h3 class="text-center">Donate to Help Protect Salmon</h3>
-                        <p>Your generous donation supports vital conservation efforts aimed at protecting salmon populations and their habitats. Help us safeguard Puget Sound's marine ecosystem and ensure the survival of these iconic species for future generations.</p>
-                        <p class="text-center"><a href="https://www.paypal.com/donate?hosted_button_id=AU6IZiRtVi_TvMOH2PoBcR2joNf7j5tquTvshW-Vd_RDcSyuNi91QLx_aUR805O777LbPtLFi9l2qwgp" class="btn btn-outline-secondary btn-lg bg-dark text-white" target="_blank">Donate Now</a></p>
+                <div class="container">
+                    <h2 id="paypal-payment" class="font-semibold text-primary text-center mb-5">Membership Payment Options</h2>
+                    <div class="row">
+                        <!-- Left Column: Online Payment Form -->
+                        <div class="col-lg-7 mb-4">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="font-semibold text-primary mb-4 text-center">Online Membership Payment</h3>
+                                    <form id="membership-form" class="needs-validation membership-form" name="membership-registration" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+                                        <!-- Netlify form requirements -->
+                                        <input type="hidden" name="form-name" value="membership-registration">
+                                        <p class="d-none">
+                                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                                        </p>
+                                        <!-- Hidden fields for payment information -->
+                                        <input type="hidden" name="membershipType" id="membershipType" value="Single Membership">
+                                        <input type="hidden" name="paymentAmount" id="paymentAmount" value="">
+                                        <input type="hidden" name="transactionId" id="transactionId" value="">
+                                        <input type="hidden" name="paymentStatus" id="paymentStatus" value="">
+                                        <input type="hidden" name="paymentDate" id="paymentDate" value="">
+            
+                                        <div class="row g-3">
+                                            <!-- Full Name -->
+                                            <div class="col-md-12 mb-3">
+                                                <label for="fullname" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="fullname" name="fullname" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your full name.
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Email Address -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="email" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid email address.
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Phone Number -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="phone" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your phone number.
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Address -->
+                                            <div class="col-md-12 mb-3">
+                                                <label for="address" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="address" name="address" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your address.
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Boat Make & Size -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="boatmakesize" class="form-label">Boat Make & Size</label>
+                                                <input type="text" class="form-control" id="boatmakesize" name="boatmakesize" placeholder="e.g. 20-foot Boston Whaler Dauntless">
+                                                <div class="form-text">Optional if you don't have a boat</div>
+                                            </div>
+                                            
+                                            <!-- Boat Name -->
+                                            <div class="col-md-6 mb-3">
+                                                <label for="boatname" class="form-label">Boat Name</label>
+                                                <input type="text" class="form-control" id="boatname" name="boatname" placeholder="e.g. Pier Pressure">
+                                                <div class="form-text">Optional if you don't have a boat</div>
+                                            </div>
+            
+                                            <!-- PayPal Buttons -->
+                                            <div class="col-md-12 mb-3">
+                                                <!-- Single Membership Button -->
+                                                <div id="single-membership-button" class="mb-3">
+                                                    <paypal-add-to-cart-button data-id="3YAYCTPW7YQU2"></paypal-add-to-cart-button>
+                                                    <script>
+                                                        cartPaypal.AddToCart({ id: "3YAYCTPW7YQU2" })
+                                                    </script>
+                                                </div>
+                                                
+                                                <!-- Family Membership Button -->
+                                                <div id="family-membership-button" class="mb-3" style="display: none;">
+                                                    <paypal-add-to-cart-button data-id="PQSK2ZZYGL6QE"></paypal-add-to-cart-button>
+                                                    <script>
+                                                        cartPaypal.AddToCart({ id: "PQSK2ZZYGL6QE" })
+                                                    </script>
+                                                </div>
+                                                
+                                                <!-- View Cart Button -->
+                                                <div class="mt-3">
+                                                    <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+                                                    <script>
+                                                        cartPaypal.Cart({ id: "pp-view-cart" })
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <!-- PayPal button container -->
+                                            <div id="paypal-button-container" class="mt-4"></div>
+                                            <div id="payment-message" class="mt-3"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Right Column: Other Payment Options -->
+                        <div class="col-lg-5 mb-4">
+                            <div class="d-flex flex-column h-100 gap-4">
+                                <!-- Pay Online Card -->
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon-circle bg-primary text-white me-3">
+                                                <i class="fas fa-credit-card"></i>
+                                            </div>
+                                            <h3 class="h5 font-semibold mb-0">Pay Online</h3>
+                                        </div>
+                                        <p class="card-text">Pay securely using PayPal. Complete the form on the left to process your payment immediately.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pay by Mail Card -->
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon-circle bg-primary text-white me-3">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <h3 class="h5 font-semibold mb-0">Pay by Mail</h3>
+                                        </div>
+                                        <p class="card-text">If you prefer to pay by mail, download the application form and send it with your payment to:</p>
+                                        <p class="mb-3"><strong>Whidbey Island - Chapter PSA</strong><br>
+                                        PO Box 1882, Oak Harbor, WA 98277</p>
+                                        <a href="images/membership-app.doc" download class="btn btn-outline-primary w-100">
+                                            <i class="fas fa-download me-2"></i>Download Application
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pay at Meeting Card -->
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="icon-circle bg-primary text-white me-3">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <h3 class="h5 font-semibold mb-0">Pay at a Meeting</h3>
+                                        </div>
+                                        <p class="card-text">Bring a completed application to our monthly meeting. We meet on the first Wednesday of each month at 6:30 PM.</p>
+                                        <div class="d-flex gap-2">
+                                            <a href="images/membership-app.doc" download class="btn btn-outline-primary flex-grow-1">
+                                                <i class="fas fa-download me-2"></i>Download Application
+                                            </a>
+                                            <a href="events.html" class="btn btn-primary flex-grow-1">
+                                                <i class="fas fa-calendar me-2"></i>View Events
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-5">
-                        <img src="images/salmon-hatchery.jpg" alt="Salmon in Puget Sound" class="img-fluid rounded">
+                </div>
+            </section>
+            
+            <!-- Donate Section -->
+            <section class=" section section-gray">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 mb-4 mb-lg-0">
+                            <h2 class="font-semibold text-primary mb-4">Donate to Help Protect Salmon</h2>
+                            <p class="lead mb-4">Your generous donation supports vital conservation efforts aimed at protecting salmon populations and their habitats.</p>
+                            <p class="mb-4">Help us safeguard Puget Sound's marine ecosystem and ensure the survival of these iconic species for future generations. Every contribution makes a difference in our ongoing efforts to preserve and enhance our local fisheries.</p>
+                            
+                            <!-- Text Button Alternative -->
+                            <a href="https://www.paypal.com/donate?hosted_button_id=Z2RG63LDRFTZN" class="btn btn-primary btn-lg px-4" target="_blank">
+                                <i class="fas fa-hand-holding-heart me-2"></i>Donate Now
+                            </a>
+                        </div>
+                        <div class="col-lg-5">
+                            <img src="images/salmon-hatchery.jpg" alt="Salmon in Puget Sound" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- Call to Action Section-->
+            <section class="py-5 text-center bg-primary text-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="font-bold mb-3">Have Questions?</h2>
+                            <p class="lead mb-4">Contact us to learn more about membership benefits or to discuss how you can get involved with our conservation efforts.</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <a href="contact.html" class="btn btn-light btn-lg px-4 gap-3">Contact Us</a>
+                                <a href="events.html" class="btn btn-outline-light btn-lg px-4">View Events</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-        <hr class="my-5">
-
+        
         <!-- Footer -->
-        <footer class="jumbotron-fluid text-center bg-dark p-5">
-            <div class="container text-white">
-                <p>&copy; Copyright 2025. All Rights Reserved.</p>
-                <p><a href="mailto:whidbeyislandpsa@gmail.com" class="text-white">whidbeypsa@gmail.com</a></p>
-                <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank"><img src="images/facebook-logo.png" alt="black and white Facebook logo" class="pr-4"></a>
+        <footer class="footer text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Whidbey Island PSA</h5>
+                        <p class="mb-1">Preserving fisheries since 2023</p>
+                        <p class="mb-1"><a href="mailto:whidbeypsa@gmail.com" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i>whidbeypsa@gmail.com</a></p>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                            <li class="mb-2"><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+                            <li class="mb-2"><a href="derby-info.html" class="text-white text-decoration-none">Derby</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="font-semibold mb-3">Connect With Us</h5>
+                        <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank" class="text-white text-decoration-none d-inline-block me-3">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <div class="mt-4">
+                            <!-- Website Designer Credit -->
+                            <p class="small mb-2">Website by <a href="mailto:webcoastcode@gmail.com" class="text-white">WebCoastCode</a></p>
+                            
+                            <!-- Copyright -->
+                            <p class="small mb-0">&copy; 2025 Whidbey Island Puget Sound Anglers.</p>
+                            <p class="small mb-0">All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
 
-        <!-- Optional JavaScript -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://www.paypal.com/sdk/js?client-id=AU6IZiRtVi_TvMOH2PoBcR2joNf7j5tquTvshW-Vd_RDcSyuNi91QLx_aUR805O777LbPtLFi9l2qwgp&currency=USD&disable-funding=card,paylater"></script>
+        <!-- JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AUxKWYmDfwV9-GSXxkKZpHmVvWYc0PgJe6zK7-taqTHrRytjYh-aUm0rSkIb9SER5XF1UMld0JsM_x3O&currency=USD"></script>
         <script src="scripts/script.js"></script>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"></script>
+        <script src="scripts/membership-form.js"></script>
+
     </body>
 </html>
