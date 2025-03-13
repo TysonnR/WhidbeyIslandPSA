@@ -9,166 +9,352 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/favicon.ico">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
         <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-        <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+        <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- PayPal Cart Button -->
+        <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="SRWGU9DEE64X6"></script>
+
+        <!-- Google Fonts - Using Open Sans and Montserrat as defined in CSS variables -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
         <!-- Style Sheet -->
         <link rel="stylesheet" href="css/styles.css">
 
         <title>Contact | Whidbey Island Puget Sound Anglers</title>
     </head>
-    <body>
+    <body>  
+        
+        <!-- Bootstrap Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="65">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Bootstrap Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
-        </a>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="index.html">Home</a>
+                    </li>
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="about.html">About</a>
+                    </li>
+                    <!-- Events -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="events.html">Events</a>
+                    </li>
+                    <!-- Derby -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="derby-info.html">Derby</a>
+                    </li>
+                    <!-- Contact -->
+                    <li class="nav-item active">
+                        <a class="nav-link font-medium" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Members Dropdown -->
+                    <li class="nav-item dropdown" id="membersDropdownItem">
+                        <a class="nav-link dropdown-toggle font-semibold" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Members
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="membersDropdown">
+                            <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a></li>
+                        </ul>
+                    </li>
+                    <!-- PayPal Cart Button -->
+                    <li class="nav-item">
+                        <div class="nav-link cart-button-container">
+                            <paypal-cart-button data-id="navbar-cart"></paypal-cart-button>
+                            <script>
+                                cartPaypal.Cart({ id: "navbar-cart" })
+                            </script>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+         <!-- Header and Hero Image -->
+         <header class="hero-container-contact">
+            <div class="hero-text-container">
+                <h1 class="display-3 font-bold text-white text-shadow">Contact</h1>
+            </div>
+            <img src="images/sunsetboat-reel.jpg" alt="Sunset boat on Puget Sound" class="img-fluid">
+        </header>
 
+        <!-- Secondary Header -->
+        <header class="section-gray py-4 text-center">
+            <div class="container">
+                <p class="text-primary font-semibold mb-2 uppercase letter-spacing-wide">Contact Us</p>
+                <p class="lead mb-0">We have local meetings the first Wednesday of every month at the American Legion in Oak Harbor at 6:30PM. See map below for directions, or see the Events page for more information.</p>
+            </div>
+        </header>
 
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <!-- Home -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <!-- About -->
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <!-- Events -->
-                <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <!-- Derby -->
-                <li class="nav-item">
-                    <a class="nav-link" href="derby-info.html">Derby</a>
-                </li>
-                <!-- Contact -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <!-- Members Dropdown -->
-            <li class="nav-item dropdown" id="membersDropdownItem">
-                <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Members
-                </a>
-                <div class="dropdown-menu" aria-labelledby="membersDropdown">
-                    <a class="dropdown-item" href="sign-up.html">Sign Up</a>
-                    <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
-                </div>
-            </li>
-            </ul>
-        </div>
-     </nav>
+        <!-- Main Content Area -->
+        <main>
 
-    <!-- Header( contact.html ) and Hero Image -->
-    <header class="jumbotron-fluid hero2">
-        <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 50vh; position: relative;">
-        <div class="text-center text-white position-absolute">
-            <h1 class="display-3">Contact</h1>
-        </div>
-        <img src="images/sunsetboat-reel.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute no-border" style="object-fit: cover; top: 0; left: 0;">
-        </div>
-    </header>
-
-    <!-- Smaller header with page info-->
-    <header class="jumbotron jumbotron-lower jumbotron-fluid text-center">
-        <div class="container">
-            <p>Contact Us</p>
-            <p class="lead">We have local meeting the first Wednesday of the every month at the American Legion in Oak Harbor at 6:30PM.  See map below for directions, or see the Events page for more information.</p>
-        </div>
-    </header>
-
-     <!-- Main Content Area -->
-    <main class="container-fluid w-100">
-		
-        <div class="text-center">
-
-            <section id="members-forum" class="container text-center bg-light">
-                <div class="row align-items-center mb-3 mt-3 full-height-row">
-                    <div class="col-md-6 order-md-2">
-                        <h3 class="mb-3">Join the Discussion</h3>
-                        <p class="lead">Connect with fellow members, discuss fishing techniques, share your catches, and stay updated on club news.</p>
-                        <a href="https://whidbeypsa.freeforums.net/" role="button" class="btn btn-outline-secondary btn-md bg-dark text-white">Members Only Forum</a>
+            <!-- Contact Info Section -->
+            <section class="py-5 section ">
+                <div class="container">
+                    <h2 class="font-semibold text-primary text-center mb-5">Ready to get involved? Contact us today.</h2>
+                    
+                    <div class="row g-4 justify-content-center">
+                        <!-- Phone -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm text-center">
+                                <div class="card-body">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-phone fa-2x"></i>
+                                    </div>
+                                    <h3 class="font-semibold h4 mb-3">Call Us</h3>
+                                    <p class="mb-3">Have a quick question? Give us a call!</p>
+                                    <a href="tel:3609294282" class="btn btn-outline-primary">
+                                        (360) 929-4282
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm text-center">
+                                <div class="card-body">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-envelope fa-2x"></i>
+                                    </div>
+                                    <h3 class="font-semibold h4 mb-3">Email Us</h3>
+                                    <p class="mb-3">Send us a message anytime!</p>
+                                    <a href="mailto:whidbeypsa@gmail.com" class="btn btn-outline-primary">
+                                        whidbeypsa@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Visit -->
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow-sm text-center">
+                                <div class="card-body">
+                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    </div>
+                                    <h3 class="font-semibold h4 mb-3">Visit Us</h3>
+                                    <p class="mb-3">Join our monthly meetings!</p>
+                                    <p class="small">690 SE Barrington Dr<br>Oak Harbor, WA 98277</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 order-md-1">
-                        <img src="images/whidbeypsa-proboard-header.png" alt="Our mission to preserve fishing" class="img-fluid rounded custom-margin-bottom no-border">
+                </div>
+            </section>
+            
+            <!-- Map Section -->
+            <section class="py-5 section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <div class="ratio ratio-4x3 rounded overflow-hidden shadow">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.6577508449777!2d-122.65455141166335!3d48.290199866432246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f8a13892fefc5%3A0xbde5a5c0902147f5!2s690%20SE%20Barrington%20Dr%2C%20Oak%20Harbor%2C%20WA%2098277!5e0!3m2!1sen!2sus!4v1731643629418!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h2 class="font-semibold text-primary mb-4">Find Us</h2>
+                            <p class="lead mb-4">Join us at the American Legion for our monthly meetings and events.</p>
+                            
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-map-marker-alt text-primary mt-1 me-3 fa-lg"></i>
+                                <div>
+                                    <h4 class="h5 font-semibold">Address</h4>
+                                    <p class="mb-0">690 SE Barrington Dr<br>Oak Harbor, WA 98277</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start mb-3">
+                                <i class="fas fa-calendar-alt text-primary mt-1 me-3 fa-lg"></i>
+                                <div>
+                                    <h4 class="h5 font-semibold">Meeting Schedule</h4>
+                                    <p class="mb-0">First Wednesday of every month at 6:30 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-info-circle text-primary mt-1 me-3 fa-lg"></i>
+                                <div>
+                                    <h4 class="h5 font-semibold">Parking</h4>
+                                    <p class="mb-0">Free parking is available on-site</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="events.html" class="btn btn-primary">
+                                    <i class="fas fa-calendar me-2"></i>View Our Events
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <h3 class="py-3 mt-3">Ready to get involved? Contact us today.</h3> 					
-            <h4 class="mobile mb-1">
-                <a href="tel:8145559608" role="button" class="btn btn-outline-secondary btn-lg bg-dark text-white">(360)929-4282</a>
-            </h4>
-            <h4 class="tablet-desktop tel-num mb-3">(360)929-4282</h4>
-            <h4>Email us: <a href="mailto:whidbeypsa@gmail.com" class="btn btn-outline-secondary btn-lg bg-dark text-white">whidbeypsa@gmail.com</a></h4>
-           
-            <h4>Show up to our meetings: 690 SE Barrington Dr, Oak Harbor, WA 98277</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.6577508449777!2d-122.65455141166335!3d48.290199866432246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f8a13892fefc5%3A0xbde5a5c0902147f5!2s690%20SE%20Barrington%20Dr%2C%20Oak%20Harbor%2C%20WA%2098277!5e0!3m2!1sen!2sus!4v1731643629418!5m2!1sen!2sus"></iframe>
-        
-        </div>
-
-        <div id="form">
-
-            <h2 class="text-center">Any questions?</h2> 
-
-            <form class="form-grid p-2 mt-3 bg-light"><!-- Start Form -->
-
-                <fieldset class="mb-2 form-group">
-                        <legend>Referral Source</legend>
-                        <label for="reference">How did you find us?</label>
-                        <select name="reference" id="reference" class="form-control">
-                            <option value="ad">Advertisement</option>
-                            <option value="friend">Friend</option>
-                            <option value="google">Google</option>
-                            <option value="social">Social Media</option>
-                            <option value="other">Other</option>
-                        </select>
-
-                        <label for="questions">Questions?</label>
-
-                        <div class="d-flex justify-content-center mt-3">
-                            <textarea id="questions" name="questions" rows="10" cols="120" class="form-control "></textarea>
+            <!-- Members Forum Section -->
+            <section class="section-gray py-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <h2 class="font-semibold text-primary mb-3">Join the Discussion</h2>
+                            <p class="lead mb-4">Connect with fellow members, discuss fishing techniques, share your catches, and stay updated on club news.</p>
+                            <a href="https://whidbeypsa.freeforums.net/" class="btn btn-primary">
+                                <i class="fas fa-comments me-2"></i>Members Only Forum
+                            </a>
                         </div>
-
-                </fieldset>
-
-                <input type="submit" id="submit" value="Submit" class="btn  btn-lg bg-dark text-white mx-auto d-block">
-
-            </form>
-
-        </div>
-			
-    </main>
-    <hr class="my-5">
-
-     <!-- Footer -->
-     <footer class="jumbotron-fluid text-center bg-dark p-5">
-
-        <div class="container text-white">
-            <p>&copy; Copyright 2025. All Rights Reserved.</p>
-            <p><a href="mailto:whidbeypsa@gmail.com" class="text-white">Whidbeypsa@gmail.com</a></p>
-            <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank"><img src="images/facebook-logo.png" alt="black and white Facebook logo" class="pr-4"></a>
-        </div>
-
-      </footer>
-
+                        <div class="col-lg-6 order-lg-1 mb-4 mb-lg-0">
+                            <img src="images/whidbeypsa-proboard-header.png" alt="Forum header" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Form Section -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4 p-md-5">
+                                    <h2 class="font-semibold text-primary text-center mb-4">Any Questions?</h2>
+                                    
+                                    <form class="needs-validation" novalidate>
+                                        <div class="row g-3">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="firstName" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="firstName" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your first name.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6 mb-3">
+                                                <label for="lastName" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="lastName" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your last name.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12 mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="email" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid email address.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12 mb-3">
+                                                <label for="reference" class="form-label">How did you find us?</label>
+                                                <select class="form-select" id="reference" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="ad">Advertisement</option>
+                                                    <option value="friend">Friend</option>
+                                                    <option value="google">Google</option>
+                                                    <option value="social">Social Media</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please select an option.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-12 mb-3">
+                                                <label for="questions" class="form-label">Message</label>
+                                                <textarea class="form-control" id="questions" rows="5" required></textarea>
+                                                <div class="invalid-feedback">Please enter your message.</div>
+                                            </div>
+                                            
+                                            <div class="col-12 text-center">
+                                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                                    <i class="fas fa-paper-plane me-2"></i>Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action Section-->
+            <section class="py-5 text-center bg-primary text-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="font-bold mb-3">Join Our Community</h2>
+                            <p class="lead mb-4">Become a member of Whidbey Island Puget Sound Anglers and help preserve quality fisheries for future generations.</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <a href="sign-up.html" class="btn btn-light btn-lg px-4 gap-3">Sign Up Today</a>
+                                <a href="events.html" class="btn btn-outline-light btn-lg px-4">View Events</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Whidbey Island PSA</h5>
+                        <p class="mb-1">Preserving fisheries since 2023</p>
+                        <p class="mb-1"><a href="mailto:whidbeypsa@gmail.com" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i>whidbeypsa@gmail.com</a></p>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                            <li class="mb-2"><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+                            <li class="mb-2"><a href="derby-info.html" class="text-white text-decoration-none">Derby</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="font-semibold mb-3">Connect With Us</h5>
+                        <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank" class="text-white text-decoration-none d-inline-block me-3">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <div class="mt-4">
+                            <!-- Website Designer Credit -->
+                            <p class="small mb-2">Website by <a href="mailto:webcoastcode@gmail.com" class="text-white">WebCoastCode</a></p>
+                            
+                            <!-- Copyright -->
+                            <p class="small mb-0">&copy; 2025 Whidbey Island Puget Sound Anglers.</p>
+                            <p class="small mb-0">All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
 </html>
