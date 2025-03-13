@@ -126,3 +126,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+<!-- Add this right after your form -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the form and PayPal link
+    const form = document.getElementById('membership-form');
+    const paypalContainer = document.getElementById('paypal-button-container');
+    
+    if (form && paypalContainer) {
+      const paypalLink = paypalContainer.querySelector('a');
+      
+      if (paypalLink) {
+        paypalLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Set payment info
+          if (document.getElementById('paymentStatus')) 
+            document.getElementById('paymentStatus').value = 'Redirected to PayPal';
+          if (document.getElementById('paymentDate'))
+            document.getElementById('paymentDate').value = new Date().toISOString();
+          
+          // Get the PayPal URL
+          const paypalUrl = this.getAttribute('href');
+          
+          // Submit the form using AJAX
+          const formData = new FormData(form);
+          
+          fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+          })
+          .then(response => {
+            console.log('Form submitted to Netlify!');
+            window.open(paypalUrl, '_blank');
+          })
+          .catch(error => {
+            console.error('Error submitting form:', error);
+            window.open(paypalUrl, '_blank');
+          });
+        });
+      }
+    }
+  });
+</script>
