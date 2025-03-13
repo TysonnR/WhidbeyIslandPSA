@@ -4,100 +4,125 @@
     Date: November 11, 2024
 */
 
-// jQuery for hero image to consume the header window space
-$(document).ready(function(){
-  $('.hero').height($(window).height()); 
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Check and add 'show' class to .text-content element if it exists
-  const textContent = document.querySelector(".text-content");
-  if (textContent) {
-      textContent.classList.add("show");
-  } else {
-      console.log("Element with class '.text-content' not found.");
-  }
+    // Check if we're on the homepage
+    const isHomePage = document.body.classList.contains("home-page");
+    
+    // Only execute hero-related code on homepage
+    if (isHomePage) {
+        // Check and add 'show' class to .text-content element if it exists
+        const textContent = document.querySelector(".text-content");
+        if (textContent) {
+            textContent.classList.add("show");
+        }
+      
+        // Handle .merch-section animation if it exists
+        const merchSection = document.querySelector(".merch-section");
+        if (merchSection) {
+            merchSection.style.opacity = "0";
+            merchSection.style.transform = "translateY(20px)"; // Starts slightly lower
+            setTimeout(() => {
+                merchSection.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+                merchSection.style.opacity = "1";
+                merchSection.style.transform = "translateY(0)";
+            }, 500); // Delay for a more natural effect
+        }
+        
+        // Get the scroll indicator element
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        
+        // Add click event listener to scroll down smoothly when clicked
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', function() {
+                // Calculate the height of the hero banner
+                const headerHeight = document.querySelector('.hero-banner').offsetHeight;
+                
+                // Scroll down to just below the hero banner plus some extra space
+                window.scrollTo({
+                    top: headerHeight + 20, 
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Hide scroll indicator when user scrolls down
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    scrollIndicator.style.opacity = '0';
+                } else {
+                    scrollIndicator.style.opacity = '0.8';
+                }
+            });
+        }
+    }
 
-  // Handle .merch-section animation if it exists
-  const merchSection = document.querySelector(".merch-section");
-  if (merchSection) {
-      merchSection.style.opacity = "0";
-      merchSection.style.transform = "translateY(20px)"; // Starts slightly lower
-      setTimeout(() => {
-          merchSection.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-          merchSection.style.opacity = "1";
-          merchSection.style.transform = "translateY(0)";
-      }, 500); // Delay for a more natural effect
-  } else {
-      console.log("Element with class '.merch-section' not found.");
-  }
-
-  // Handle dropdown change for PayPal button
-  const membershipDropdown = document.getElementById("membership");
-  if (membershipDropdown) {
-      membershipDropdown.addEventListener("change", function () {
-          const selectedOption = this.value;
-          const paymentAmount = selectedOption === "family" ? "40.00" : "35.00";
-
-          // Clear and re-render the PayPal button with updated amount
-          document.getElementById("paypal-button-container").innerHTML = ''; // Clear previous button
-          renderPayPalButton(paymentAmount); // Re-render PayPal button
-      });
-  } else {
-      console.log("Element with id 'membership' not found.");
-  }
-
-  // Ensure the "sign-up" page is active in navigation
-  const currentPage = window.location.pathname.split("/").pop();
-  if (currentPage === "sign-up.html") {
-      const dropdownParent = document.getElementById("membersDropdownItem");
-      if (dropdownParent) {
-          dropdownParent.classList.add("active");
-      } else {
-          console.log("Element with id 'membersDropdownItem' not found.");
-      }
-  }
-
-  // Ensure PayPal Button is rendered on page load
-  renderPayPalButton("35.00");
 });
 
-// Function to render PayPal button
-function renderPayPalButton(amount) {
-  paypal.Buttons({
-      createOrder: function (data, actions) {
-          return actions.order.create({
-              purchase_units: [{
-                  amount: {
-                      value: amount // Dynamically set the payment amount
-                  }
-              }]
-          });
-      },
-      onApprove: function (data, actions) {
-          return actions.order.capture().then(function (details) {
-              alert('Transaction completed by ' + details.payer.name.given_name);
-              window.location.href = 'success.html'; // Redirect after payment
-          });
-      },
-      onError: function (err) {
-          console.error('PayPal Error:', err);
-          alert('An error occurred during the transaction. Please try again.');
-      }
-  }).render('#paypal-button-container'); // Render the button inside the container
+(function () {
+    'use strict'
+    
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+    
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+// Initialize PayPal Donation Button
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof PayPal !== 'undefined' && PayPal.Donation) {
+        PayPal.Donation.Button({
+            env: 'production',
+            hosted_button_id: 'Z2RG63LDRFTZN',
+            image: {
+                src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                alt: 'Donate with PayPal button',
+                title: 'PayPal - The safer, easier way to pay online!',
+            }
+        }).render('#donate-button');
+    }
+});
+
+// Function to scroll to donation button
+function scrollToDonatation() {
+    const donateButton = document.getElementById('donate-button-container');
+    if (donateButton) {
+        donateButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Add a subtle highlight effect
+        donateButton.classList.add('highlight-element');
+        setTimeout(() => {
+            donateButton.classList.remove('highlight-element');
+        }, 2000);
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.scroll-to').forEach(anchor => {
-        anchor.addEventListener('click', function(event) {
-            event.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 100, 
-                    behavior: 'smooth'
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the join-now button
+    const joinNowButton = document.getElementById('join-now-button');
+    
+    // Add click event listener
+    if (joinNowButton) {
+        joinNowButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target element
+            const targetSection = document.getElementById('membership-form');
+            
+            // Scroll to the target with smooth behavior
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
-    });
+    }
 });
