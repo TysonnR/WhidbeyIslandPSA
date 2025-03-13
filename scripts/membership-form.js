@@ -1,194 +1,138 @@
 /**
- * Membership Form Integration with PayPal
- * Handles form validation, payment selection, and Netlify form submission
+ * Simple PayPal Button Display Logic
+ * Shows PayPal buttons only when form is complete
  */
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if we're on the sign-up page
-    if (window.location.pathname.includes('sign-up.html')) {
-        setupMembershipFormAndPayPal();
+    // Direct references to key elements
+    const form = document.getElementById('membership-form');
+    const singleButton = document.getElementById('single-membership-button');
+    const familyButton = document.getElementById('family-membership-button');
+    const messageArea = document.getElementById('payment-message');
+    
+    // Exit if not on the right page
+    if (!form || (!singleButton && !familyButton)) {
+        console.log("Required elements not found");
+        return;
     }
-});
-
-function setupMembershipFormAndPayPal() {
-    // Get references to form and PayPal elements
-    const membershipForm = document.querySelector('.membership-form');
-    const paypalAddToCartButton = document.querySelector('paypal-add-to-cart-button');
     
-    if (!membershipForm || !paypalAddToCartButton) return;
+    console.log("Form and payment buttons found");
     
-    // Initially hide the PayPal buttons
-    paypalAddToCartButton.style.display = 'none';
-    const paymentMessage = document.createElement('div');
-    paymentMessage.id = 'payment-message';
-    paymentMessage.className = 'alert alert-info mt-3';
-    paymentMessage.innerHTML = '<i class="fas fa-info-circle me-2"></i>Complete the form above to enable payment options.';
-    paypalAddToCartButton.insertAdjacentElement('afterend', paymentMessage);
-    
-    // Create an observer to watch for form field changes
-    createFormObserver(membershipForm, paypalAddToCartButton, paymentMessage);
-    
-    // Add event listener for when items are added to cart
-    if (typeof window.cartPaypal !== 'undefined') {
-        // Check if onReady method exists
-        if (typeof window.cartPaypal.onReady === 'function') {
-            window.cartPaypal.onReady(() => {
-                console.log('PayPal cart is ready');
-                setupPayPalEventListeners(membershipForm);
-            });
+    // Create message area if it doesn't exist
+    if (!messageArea) {
+        const newMessage = document.createElement('div');
+        newMessage.id = 'payment-message';
+        newMessage.className = 'alert alert-info mt-3';
+        newMessage.innerHTML = 'Complete all required fields to see payment options';
+        
+        // Insert before the buttons
+        if (singleButton) {
+            singleButton.parentNode.insertBefore(newMessage, singleButton);
+        } else if (familyButton) {
+            familyButton.parentNode.insertBefore(newMessage, familyButton);
         } else {
-            // Fallback if onReady isn't available
-            console.log('PayPal cart is available, setting up event listeners directly');
-            setupPayPalEventListeners(membershipForm);
+            form.appendChild(newMessage);
         }
-    } else {
-        console.error('PayPal cart is not available');
-        paymentMessage.className = 'alert alert-danger mt-3';
-        paymentMessage.innerHTML = '<i class="fas fa-exclamation-triangle me-2"></i>Payment system is currently unavailable. Please try again later or contact us.';
     }
-}
-
-function setupPayPalEventListeners(form) {
-    // Listen for cart events
-    if (typeof window.cartPaypal.onAddItem === 'function') {
-        window.cartPaypal.onAddItem((data) => {
-            console.log('Item added to cart', data);
-            // Validate form before allowing checkout
-            if (!validateBeforeCheckout(form)) {
-                // Clear the cart if form is invalid
-                if (typeof window.cartPaypal.clearCart === 'function') {
-                    window.cartPaypal.clearCart();
-                }
+    
+    // Get all required input fields
+    const requiredInputs = form.querySelectorAll('input[required]');
+    console.log(`Found ${requiredInputs.length} required fields`);
+    
+    // If no required fields are found, manually set some
+    if (requiredInputs.length === 0) {
+        const commonFields = ['fullname', 'email', 'phone', 'address'];
+        commonFields.forEach(fieldName => {
+            const field = form.querySelector(`[name="${fieldName}"]`);
+            if (field) {
+                field.setAttribute('required', 'true');
+                console.log(`Made ${fieldName} required`);
             }
         });
     }
     
-    // When checkout completes successfully
-    if (typeof window.cartPaypal.onCheckout === 'function') {
-        window.cartPaypal.onCheckout((data) => {
-            console.log('Checkout completed', data);
-            // Now submit the form to Netlify
-            submitFormToNetlify(form, data);
+    // Get the updated list of required fields
+    const allRequiredFields = form.querySelectorAll('input[required]');
+    console.log(`Now tracking ${allRequiredFields.length} required fields`);
+    
+    // Force buttons to be hidden initially
+    if (singleButton) singleButton.style.display = 'none';
+    if (familyButton) familyButton.style.display = 'none';
+    
+    // Function to check if form is complete
+    function checkFormCompletion() {
+        let isComplete = true;
+        
+        // Check each required field
+        allRequiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isComplete = false;
+                console.log(`Field incomplete: ${field.name || field.id}`);
+            }
         });
+        
+        return isComplete;
     }
-}
-
-// Create observer to watch form fields and show/hide PayPal buttons
-function createFormObserver(form, paypalButton, messageEl) {
-    // Check form validity on input to any field
-    const formInputs = form.querySelectorAll('input[required]');
-    formInputs.forEach(input => {
-        input.addEventListener('input', () => {
-            if (validateForm(form)) {
-                paypalButton.style.display = 'block';
-                messageEl.className = 'alert alert-success mt-3';
-                messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i>Form is valid! Please proceed with payment.';
+    
+    // Function to update button visibility
+    function updateButtonVisibility() {
+        const formComplete = checkFormCompletion();
+        const msg = document.getElementById('payment-message');
+        
+        console.log(`Form complete: ${formComplete}`);
+        
+        if (formComplete) {
+            // Determine which button to show
+            const membershipTypeField = document.getElementById('membershipType');
+            const isFamilyMembership = membershipTypeField && 
+                                       membershipTypeField.value === 'Family Membership';
+            
+            // Show appropriate button
+            if (isFamilyMembership) {
+                if (singleButton) singleButton.style.display = 'none';
+                if (familyButton) familyButton.style.display = 'block';
             } else {
-                paypalButton.style.display = 'none';
-                messageEl.className = 'alert alert-info mt-3';
-                messageEl.innerHTML = '<i class="fas fa-info-circle me-2"></i>Complete the form above to enable payment options.';
+                if (singleButton) singleButton.style.display = 'block';
+                if (familyButton) familyButton.style.display = 'none';
             }
-        });
-    });
-    
-    // Initial check
-    if (validateForm(form)) {
-        paypalButton.style.display = 'block';
-        messageEl.className = 'alert alert-success mt-3';
-        messageEl.innerHTML = '<i class="fas fa-check-circle me-2"></i>Form is valid! Please proceed with payment.';
-    }
-}
-
-// Form validation function
-function validateForm(form) {
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            isValid = false;
-            field.classList.add('is-invalid');
+            
+            // Update message
+            if (msg) {
+                msg.className = 'alert alert-success mt-3';
+                msg.innerHTML = 'Form complete! You can now proceed with payment.';
+            }
         } else {
-            field.classList.remove('is-invalid');
-            field.classList.add('is-valid');
+            // Hide both buttons
+            if (singleButton) singleButton.style.display = 'none';
+            if (familyButton) familyButton.style.display = 'none';
+            
+            // Update message
+            if (msg) {
+                msg.className = 'alert alert-info mt-3';
+                msg.innerHTML = 'Complete all required fields to see payment options';
+            }
         }
+    }
+    
+    // Add input event listeners to all required fields
+    allRequiredFields.forEach(field => {
+        field.addEventListener('input', updateButtonVisibility);
+        field.addEventListener('change', updateButtonVisibility);
     });
     
-    return isValid;
-}
-
-// Validate form before allowing checkout to proceed
-function validateBeforeCheckout(form) {
-    if (!validateForm(form)) {
-        // Show error message
-        alert('Please complete all required fields before proceeding to checkout.');
-        
-        // Focus on first invalid field
-        const firstInvalid = form.querySelector('.is-invalid');
-        if (firstInvalid) {
-            firstInvalid.focus();
-            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        
-        return false;
-    }
-    return true;
-}
-
-// Submit form to Netlify after successful checkout
-function submitFormToNetlify(form, paymentData) {
-    // Create a hidden info field for payment data
-    let paymentInfoField = form.querySelector('input[name="payment_info"]');
-    if (!paymentInfoField) {
-        paymentInfoField = document.createElement('input');
-        paymentInfoField.type = 'hidden';
-        paymentInfoField.name = 'payment_info';
-        form.appendChild(paymentInfoField);
+    // Handle membership type changes if applicable
+    const membershipSelector = document.getElementById('membership-type-selector');
+    if (membershipSelector) {
+        membershipSelector.addEventListener('change', function() {
+            const membershipTypeField = document.getElementById('membershipType');
+            if (membershipTypeField) {
+                membershipTypeField.value = this.value;
+            }
+            updateButtonVisibility();
+        });
     }
     
-    // Add payment details to the hidden field
-    paymentInfoField.value = JSON.stringify({
-        transaction_id: paymentData.id || 'unknown',
-        payment_status: 'completed',
-        payment_date: new Date().toISOString(),
-        payment_amount: paymentData.amount || 'unknown'
-    });
-    
-    // Submit the form
-    form.submit();
-    
-    // Load success page HTML from separate file
-    const mainContent = document.querySelector('#membership-form');
-    if (mainContent) {
-        fetch('membership-success.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(html => {
-                // Replace any placeholder values
-                html = html.replace('{{transactionId}}', paymentData.id || 'unknown');
-                
-                // Insert the HTML
-                mainContent.innerHTML = html;
-                
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            })
-            .catch(error => {
-                console.error('Error loading success page:', error);
-                // Fallback to inline HTML if loading fails
-                mainContent.innerHTML = `
-                    <div class="container">
-                        <div class="alert alert-success">
-                            <h4>Registration Complete!</h4>
-                            <p>Thank you for your membership. Your registration has been received.</p>
-                            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
-                        </div>
-                    </div>
-                `;
-            });
-    }
-}
+    // Check initial state
+    updateButtonVisibility();
+    console.log("PayPal button display logic initialized");
+});
