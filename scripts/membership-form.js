@@ -1,6 +1,6 @@
 /**
- * Fixed Membership Form Solution
- * Uses a proper form submission technique to avoid 405 errors
+ *
+ * Paypal Membership Form
  */
 
 document.addEventListener("DOMContentLoaded", function() {
