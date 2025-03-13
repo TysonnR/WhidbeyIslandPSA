@@ -14,182 +14,296 @@
         <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- PayPal Cart Button -->
+        <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="SRWGU9DEE64X6"></script>
+
+        <!-- Google Fonts - Using Open Sans and Montserrat as defined in CSS variables -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
         <!-- Style Sheet -->
         <link rel="stylesheet" href="css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
- 
+
         <title>Derby Info | Whidbey Island Puget Sound Anglers</title>
     </head>
-    <body>
+    <body>  
+        
+        <!-- Bootstrap Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="65">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Bootstrap Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="50">
-        </a>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="index.html">Home</a>
+                    </li>
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="about.html">About</a>
+                    </li>
+                    <!-- Events -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="events.html">Events</a>
+                    </li>
+                    <!-- Derby -->
+                    <li class="nav-item active">
+                        <a class="nav-link font-medium" href="derby-info.html">Derby</a>
+                    </li>
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a class="nav-link font-medium" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Members Dropdown -->
+                    <li class="nav-item dropdown" id="membersDropdownItem">
+                        <a class="nav-link dropdown-toggle font-semibold" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Members
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="membersDropdown">
+                            <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a></li>
+                        </ul>
+                    </li>
+                    <!-- PayPal Cart Button -->
+                    <li class="nav-item">
+                        <div class="nav-link cart-button-container">
+                            <paypal-cart-button data-id="navbar-cart"></paypal-cart-button>
+                            <script>
+                                cartPaypal.Cart({ id: "navbar-cart" })
+                            </script>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Header and Hero Image -->
+        <header class="hero-container-derby">
+            <div class="hero-text-container">
+                <h1 class="display-3 font-bold text-white text-shadow">Coho Derby</h1>
+            </div>
+            <img src="images/derby-header.jp" alt="Puget sound fish" class="img-fluid">
+        </header>
 
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <!-- Home -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <!-- About -->
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <!-- Events -->
-                <li class="nav-item">
-                    <a class="nav-link" href="events.html">Events</a>
-                </li>
-                <!-- Derby -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="derby-info.html">Derby</a>
-                </li>
-                <!-- Contact -->
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-                <!-- Members Dropdown -->
-            <li class="nav-item dropdown" id="membersDropdownItem">
-                <a class="nav-link dropdown-toggle" href="#" id="membersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Members
-                </a>
-                <div class="dropdown-menu" aria-labelledby="membersDropdown">
-                    <a class="dropdown-item" href="sign-up.html">Sign Up</a>
-                    <a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a>
+
+        <!-- Secondary Header -->
+        <header class="section-gray py-4 text-center">
+            <div class="container">
+                <p class="text-primary font-semibold mb-2 uppercase letter-spacing-wide">Derby Info</p>
+                <p class="lead mb-0">Welcome to the official page for the Whidbey PSA Coho Derby! We are excited to host this annual event, bringing together anglers from all over to enjoy a weekend of competitive fishing and community spirit. Whether you're here to catch the big one, win amazing prizes, or simply enjoy the outdoors, we're thrilled to have you join us.</p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- Derby Rules Section -->
+            <section class="py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2 class="font-semibold text-primary mb-4">Derby Rules & Information</h2>
+                            <p class="lead mb-4">The Whidbey Island Puget Sound Anglers annual Coho Derby, celebrating local fishing while supporting conservation and community engagement.</p>
+
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h3 class="font-semibold text-primary">1. Liability Disclaimer</h3>
+                                    <p class="mb-0">By participating in the derby, you acknowledge that PSA Whidbey Island, its sponsors, and officials are not responsible for any loss, damage, or injury to persons, boats, vehicles, or equipment during the event. Participants assume full responsibility for their own safety and agree to waive any claims against the Derby Committee, sponsors, or officials.</p>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h3 class="font-semibold text-primary">2. Fishing Areas & Times</h3>
+                                    <p>Fishing permitted in Marine Areas: 7, 7-1, 8-2, 9, 10.</p>
+                                    <p class="font-semibold mb-2">Derby Hours:</p>
+                                    <ul>
+                                        <li>Saturday: Dawn to 4:00 pm</li>
+                                        <li>Sunday: Dawn to 2:00 pm</li>
+                                    </ul>
+                                    <p class="font-semibold mb-2">Weigh-In Locations:</p>
+                                    <ul class="mb-0">
+                                        <li>Bayside Marine, Everett</li>
+                                        <li>Fort Casey State Park, Coupeville</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h3 class="font-semibold text-primary">3. Fish Eligibility</h3>
+                                    <ul class="mb-0">
+                                        <li>Only hatchery (fin-clipped) Coho Salmon are eligible.</li>
+                                        <li>Wild salmon cannot be retained or weighed.</li>
+                                        <li>Minimum weight for entry: 3.0 lbs. whole.</li>
+                                        <li>Fish must be bled but not gutted or cleaned.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h3 class="font-semibold text-primary">4. Prize Categories</h3>
+                                    <ul class="mb-0">
+                                        <li>Largest Coho Salmon: Prizes for 1st, 2nd, and 3rd place.</li>
+                                        <li>Mystery Fish: Prize for the catch closest to a predetermined mystery weight.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h3 class="font-semibold text-primary">5. Additional Rules</h3>
+                                    <ul class="mb-0">
+                                        <li>Participants must have a valid fishing license and derby ticket.</li>
+                                        <li>Only one fish per contestant per day can be weighed.</li>
+                                        <li>In case of ties, the earliest weigh-in time will determine the winner.</li>
+                                        <li>All WDFW regulations must be followed.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="bg-light p-4 rounded shadow-sm">
+                                <h2 class="font-semibold text-primary mb-4">Sponsors</h2>
+                                <img src="images/derby-sponsors-re.png" alt="Spirit-lures sponsor" class="img-fluid rounded mb-4">
+
+                                <p>For full rules and details, see the official Derby Rules Document.</p>
+                                
+                                <!-- Derby Action Buttons -->
+                                <div class="d-grid gap-3 mb-4">
+                                    <a href="derby-info-rules.html" class="btn btn-primary">
+                                        <i class="fas fa-file-alt me-2"></i> Full Derby Rules
+                                    </a>
+                                    <a href="https://whidbeyislandcoho.simplederby.com/leaders.php" class="btn btn-primary">
+                                        <i class="fas fa-trophy me-2"></i> Leaderboard
+                                    </a>
+                                    <a href="https://tickets.simplederby.com/whidbeyislandcohoderby/tc-events/tickets/" class="btn btn-success">
+                                        <i class="fas fa-ticket-alt me-2"></i> Get Tickets
+                                    </a>
+                                </div>
+
+                                <div class="mt-4 border-top pt-4">
+                                    <h4 class="font-semibold text-primary">Become a Sponsor</h4>
+                                    <p>Looking to become a sponsor? Fill out our sponsorship application:</p>
+                                    <a href="images/sponsor-form.pdf" download class="btn btn-outline-primary">
+                                        <i class="fas fa-download me-2"></i> Download Sponsor Application
+                                    </a>
+                                    <p class="mt-2 mb-0">and send it to <a href="mailto:whidbeypsa@gmail.com" class="text-primary">whidbeypsa@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </li>
-            </ul>
-        </div>
-     </nav>
-
-     <!-- Header and Hero Image -->
-    <header class="jumbotron-fluid hero2">
-        <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 50vh; position: relative;">
-          <div class="text-center text-white position-absolute">
-            <h1 class="display-3">Coho Derby</h1>
-          </div>
-          <img src="images/fishnearkingston.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100 position-absolute no-border" style="object-fit: cover; top: 0; left: 0;">
-        </div>
-    </header>
-  
-    <!-- Smaller header with page info-->
-    <header class="jumbotron jumbotron-lower jumbotron-fluid text-center">
-        <div class="container">
-            <p>Derby Info</p>
-            <p class="lead">Welcome to the official page for the Whidbey PSA Coho Derby! We are excited to host this annual event, bringing together anglers from all over to enjoy a weekend of competitive fishing and community spirit. Whether you’re here to catch the big one, win amazing prizes, or simply enjoy the outdoors, we’re thrilled to have you join us.</p>
-        </div>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="container-fluid w-75 mb-6">
-        <div class="upper-section">
-            <div class="row">
-                <div class="col-md-7">
-                    <h1>Derby Rules & Information</h1>
-                    <p class="lead">The Whidbey Island Puget Sound Anglers annual Coho Derby, celebrating local fishing while supporting conservation and community engagement.</p>
-
-                    <h3>1. Liability Disclaimer</h3>
-                    <p>By participating in the derby, you acknowledge that PSA Whidbey Island, its sponsors, and officials are not responsible for any loss, damage, or injury to persons, boats, vehicles, or equipment during the event. Participants assume full responsibility for their own safety and agree to waive any claims against the Derby Committee, sponsors, or officials.</p>
-
-                    <h3>2. Fishing Areas & Times</h3>
-                        <p>Fishing permitted in Marine Areas: 7, 7-1, 8-2, 9, 10.</p>
-                                <p>Derby Hours:</p>
-                                <ul>
-                                    <li>Saturday: Dawn to 4:00 pm</li>
-                                    <li>Sunday: Dawn to 2:00 pm</li>
-                                </ul>
-                                <p>Weigh-In Locations:</p>
-                                <ul>
-                                    <li>Bayside Marine, Everett</li>
-                                    <li>Fort Casey State Park, Coupeville</li>
-                                </ul>
-
-                    <h3>3. Fish Eligibility</h3>
-                        <ul>
-                            <li>Only hatchery (fin-clipped) Coho Salmon are eligible.</li>
-                            <li>Wild salmon cannot be retained or weighed.</li>
-                            <li>minimum weight for entry: 3.0 lbs. whole.</li>
-                            <li>Fish must be bled but not gutted or cleaned.</li>
-                        </ul>
-                    <h3>4. Prize Categories</h3>
-                        <ul>
-                            <li>Largest Coho Salmon: Prizes for 1st, 2nd, and 3rd place.</li>
-                            <li>Mystery Fish: Prize for the catch closest to a predetermined mystery weight.</li>
-                        </ul>
-                    <h3>5. Additional Rules</h3>
-                        <ul>
-                            <li>Participants must have a valid fishing license and derby ticket.</li>
-                            <li>Only one fish per contestant per day can be weighed.</li>
-                            <li>In case of ties, the earliest weigh-in-time will detemine the winner.</li>
-                            <li>All WDFW regulations must be followed.</li>
-                        </ul>
+            </section>
+            
+            <!-- Previous Winners Section -->
+            <section class="section-gray py-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 order-lg-2">
+                            <h2 class="font-semibold text-primary mb-3">2024 Derby Winners</h2>
+                            <p class="lead mb-4">Congratulations to our champions of the 2nd Annual Coho Derby!</p>
+                            
+                            <div class="card mb-4 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h4 class="text-primary font-semibold">Winners by Place</h4>
+                                    <ul class="mb-0">
+                                        <li><strong>1st Place:</strong> Richard Bergman, Sequim, at 9.15 lbs</li>
+                                        <li><strong>2nd Place (tie):</strong> Jennifer Sutton, Lynnwood, at 8.35 lbs</li>
+                                        <li><strong>2nd Place (tie):</strong> Michael Lavigueure, Duvall, at 8.35 lbs</li>
+                                        <li><strong>Mystery Fish:</strong> Randy Johnson, Snohomish, at 6.63 lbs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h4 class="text-primary font-semibold">Special Prizes</h4>
+                                    <p class="mb-0">Two Scotty Downriggers were awarded to Tee Hicks and Wendell Bunch of Oak Harbor.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-primary mt-4" role="alert">
+                                <i class="fas fa-fish me-2"></i> Thank you to all who participated! We're excited to make next year's event even bigger and better. See you in 2025!
+                            </div>
+                        </div>
+                        <div class="col-lg-5 order-lg-1 mb-4 mb-lg-0">
+                            <img src="images/derby-p1.jpeg" alt="Derby Winner" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <h2>Sponsors</h2>
-                    <img src="images/derby-sponsors-re.png" alt="Spirit-lures sponsor" class="img-fluid rounded left-block">
-
-                    <p>For full rules and details, see the offical Derby Rules Document.</p>
-                    <!--Nav Buttons-->
-                    <a href="derby-info-rules.html" role="button" class="btn btn-outline-secondary btn-lg bg-dark text-white">Full Derby Rules</a>
-                    <a href="https://whidbeyislandcoho.simplederby.com/leaders.php" role="button" class="btn btn-outline-secondary btn-lg bg-dark text-white">Leaderboard</a>
-                    <a href="https://tickets.simplederby.com/whidbeyislandcohoderby/tc-events/tickets/" role="button" class="btn btn-outline-secondary btn-lg bg-dark text-white">Get Tickets</a>
-
-                    <div class="text-left mt-3">
-                        <p>Looking to become a sponsor? Fill this out</p>
-                        <a href="images/sponsor-form.pdf" download class="btn btn-outline-secondary btn-lg bg-dark text-white">Download Sponsor Application</a>
-                        <p>and send it to <a href="mailto:whidbeypsa@gmail.com" class="email-link">whidbeypsa@gmail.com</a></p>
+            </section>
+            
+            <!-- Call to Action Section-->
+            <section class="py-5 text-center bg-primary text-white">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="font-bold mb-3">Join Us for the 2025 Derby!</h2>
+                            <p class="lead mb-4">Secure your spot for the 3rd Annual Whidbey Island Coho Derby on September 13-14, 2025.</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <a href="https://tickets.simplederby.com/whidbeyislandcohoderby/tc-events/tickets/" class="btn btn-light btn-lg px-4 gap-3">Get Tickets</a>
+                                <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer text-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Whidbey Island PSA</h5>
+                        <p class="mb-1">Preserving fisheries since 2023</p>
+                        <p class="mb-1"><a href="mailto:whidbeypsa@gmail.com" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i>whidbeypsa@gmail.com</a></p>
+                    </div>
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h5 class="font-semibold mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                            <li class="mb-2"><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+                            <li class="mb-2"><a href="derby-info.html" class="text-white text-decoration-none">Derby</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="font-semibold mb-3">Connect With Us</h5>
+                        <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank" class="text-white text-decoration-none d-inline-block me-3">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <div class="mt-4">
+                            <!-- Website Designer Credit -->
+                            <p class="small mb-2">Website by <a href="mailto:webcoastcode@gmail.com" class="text-white">WebCoastCode</a></p>
+                            
+                            <!-- Copyright -->
+                            <p class="small mb-0">&copy; 2025 Whidbey Island Puget Sound Anglers.</p>
+                            <p class="small mb-0">All Rights Reserved.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-
-        <div class="lower-section section-divider">
-            <div class="row">
-                <div class="col-md-7 order-2">
-                    <h2 class="display-3">2024 Derby Winners</h2>
-                    <p class="lead">Congratulations to our champions of the 2nd Annual Coho Derby!</p>
-                    <ul>
-                        <li>1st Place: Richard Bergman, Sequim, at 9.15 lbs</li>
-                        <li>2nd Place (tie): Jennifer Sutton, Lynnwood, at 8.35 lbs</li>
-                        <li>2nd Place (tie): Michael Lavigueure, Duvall, at 8.35 lbs</li>
-                        <li>Mystery Fish: Randy Johnson, Snohomish, at 6.63 lbs</li>
-                    </ul>
-                    <h2>Special Prizes:</h2>
-                    <p>Two Scotty Downriggers were awarded to Tee Hicks and Wendell Bunch of Oak Harbor.</p>
-                    <p>Thank you to all who participated! We’re excited to make next year’s event even bigger and better. See you in 2025!</p>
-                </div>
-                <div class="col-md-5">
-                <img src="images/derby-p1.jpeg" alt="Derby Winner" class="img-fluid rounded">
-                </div>
-            </div>
-        </div>
-        <hr class="my-5">
-     </main>
-
-     <!-- Footer -->
-     <footer class="jumbotron-fluid text-center bg-dark p-5">
-
-        <div class="container text-white">
-            <p>&copy; Copyright 2025. All Rights Reserved.</p>
-            <p><a href="mailto:whidbeypsa@gmail.com" class="text-white">whidbeypsa@gmail.com</a></p>
-            <a href="https://www.facebook.com/Fishonadmin?_rdr" target="_blank"><img src="images/facebook-logo.png" alt="black and white Facebook logo" class="pr-4"></a>
-        </div>
-
-      </footer>
-
+        </footer>
+        
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
 </html>
