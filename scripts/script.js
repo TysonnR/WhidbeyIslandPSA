@@ -1,7 +1,7 @@
 /*
     Student Name: Tyson Ringelstetter
     File Name: script.js
-    Date: March 12, 2025
+    Date: November 11, 2024
 */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -55,11 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Bootstrap form validation
-    // Fetch all the forms with .needs-validation class
+});
+
+(function () {
+    'use strict'
+    
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
     
-    // Loop over them and prevent submission unless valid
+    // Loop over them and prevent submission
     Array.from(forms).forEach(function (form) {
         form.addEventListener('submit', function (event) {
             if (!form.checkValidity()) {
@@ -70,8 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
             form.classList.add('was-validated')
         }, false)
     })
+})()
 
-    // Initialize PayPal Donation Button if it exists
+// Initialize PayPal Donation Button
+document.addEventListener('DOMContentLoaded', function() {
     if (typeof PayPal !== 'undefined' && PayPal.Donation) {
         PayPal.Donation.Button({
             env: 'production',
@@ -83,35 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }).render('#donate-button');
     }
-
-    // Get the join-now button
-    const joinNowButton = document.getElementById('join-now-button');
-    
-    // Add click event listener
-    if (joinNowButton) {
-        joinNowButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Get the target element - first try membership-form
-            let targetSection = document.getElementById('membership-form');
-            
-            // If not found, try paypal-payment (as fallback)
-            if (!targetSection) {
-                targetSection = document.getElementById('paypal-payment');
-            }
-            
-            // Scroll to the target with smooth behavior
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    }
 });
 
-// Function to scroll to donation button (kept as global function for external calls)
+// Function to scroll to donation button
 function scrollToDonatation() {
     const donateButton = document.getElementById('donate-button-container');
     if (donateButton) {
@@ -123,3 +103,26 @@ function scrollToDonatation() {
         }, 2000);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the join-now button
+    const joinNowButton = document.getElementById('join-now-button');
+    
+    // Add click event listener
+    if (joinNowButton) {
+        joinNowButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target element
+            const targetSection = document.getElementById('membership-form');
+            
+            // Scroll to the target with smooth behavior
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+});
