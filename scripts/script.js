@@ -127,8 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-<!-- Add this right after your form -->
-<script>
   document.addEventListener('DOMContentLoaded', function() {
     // Get the form and PayPal link
     const form = document.getElementById('membership-form');
