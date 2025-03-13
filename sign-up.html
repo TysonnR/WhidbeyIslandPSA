@@ -227,15 +227,6 @@
                                         <input type="hidden" name="paymentDate" id="paymentDate" value="">
             
                                         <div class="row g-3">
-                                            <!-- Membership Type Selector -->
-                                            <div class="col-md-12 mb-3">
-                                                <label for="membership-type-selector" class="form-label">Membership Type</label>
-                                                <select class="form-select" id="membership-type-selector" required>
-                                                    <option value="Single Membership" selected>Single Membership ($35/year)</option>
-                                                    <option value="Family Membership">Family Membership ($40/year)</option>
-                                                </select>
-                                            </div>
-                                            
                                             <!-- Full Name -->
                                             <div class="col-md-12 mb-3">
                                                 <label for="fullname" class="form-label">Full Name</label>
@@ -286,22 +277,17 @@
                                                 <div class="form-text">Optional if you don't have a boat</div>
                                             </div>
             
-                                            <!-- Payment Message Area -->
-                                            <div id="payment-message" class="col-md-12 mb-3">
-                                                <div class="alert alert-info">Complete the form above to enable payment options.</div>
-                                            </div>
-            
                                             <!-- PayPal Buttons -->
                                             <div class="col-md-12 mb-3">
-                                                <!-- Single Membership Button (Initially Hidden) -->
-                                                <div id="single-membership-button" class="mb-3" style="display: none;">
+                                                <!-- Single Membership Button -->
+                                                <div id="single-membership-button" class="mb-3">
                                                     <paypal-add-to-cart-button data-id="3YAYCTPW7YQU2"></paypal-add-to-cart-button>
                                                     <script>
                                                         cartPaypal.AddToCart({ id: "3YAYCTPW7YQU2" })
                                                     </script>
                                                 </div>
                                                 
-                                                <!-- Family Membership Button (Initially Hidden) -->
+                                                <!-- Family Membership Button -->
                                                 <div id="family-membership-button" class="mb-3" style="display: none;">
                                                     <paypal-add-to-cart-button data-id="PQSK2ZZYGL6QE"></paypal-add-to-cart-button>
                                                     <script>
@@ -319,6 +305,7 @@
                                             </div>
                                             <!-- PayPal button container -->
                                             <div id="paypal-button-container" class="mt-4"></div>
+                                            <div id="payment-message" class="mt-3"></div>
                                         </div>
                                     </form>
                                 </div>
