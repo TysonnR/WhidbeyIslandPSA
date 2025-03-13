@@ -225,8 +225,17 @@
                                         <input type="hidden" name="transactionId" id="transactionId" value="">
                                         <input type="hidden" name="paymentStatus" id="paymentStatus" value="">
                                         <input type="hidden" name="paymentDate" id="paymentDate" value="">
-            
+
                                         <div class="row g-3">
+                                            <!-- Membership Type Selector -->
+                                            <div class="col-md-12 mb-3">
+                                                <label for="membership-type-selector" class="form-label">Membership Type</label>
+                                                <select class="form-select" id="membership-type-selector" required>
+                                                    <option value="Single Membership" selected>Single Membership ($35/year)</option>
+                                                    <option value="Family Membership">Family Membership ($40/year)</option>
+                                                </select>
+                                            </div>
+                                            
                                             <!-- Full Name -->
                                             <div class="col-md-12 mb-3">
                                                 <label for="fullname" class="form-label">Full Name</label>
@@ -276,36 +285,25 @@
                                                 <input type="text" class="form-control" id="boatname" name="boatname" placeholder="e.g. Pier Pressure">
                                                 <div class="form-text">Optional if you don't have a boat</div>
                                             </div>
-            
-                                            <!-- PayPal Buttons -->
-                                            <div class="col-md-12 mb-3">
-                                                <!-- Single Membership Button -->
-                                                <div id="single-membership-button" class="mb-3">
-                                                    <paypal-add-to-cart-button data-id="3YAYCTPW7YQU2"></paypal-add-to-cart-button>
-                                                    <script>
-                                                        cartPaypal.AddToCart({ id: "3YAYCTPW7YQU2" })
-                                                    </script>
-                                                </div>
-                                                
-                                                <!-- Family Membership Button -->
-                                                <div id="family-membership-button" class="mb-3" style="display: none;">
-                                                    <paypal-add-to-cart-button data-id="PQSK2ZZYGL6QE"></paypal-add-to-cart-button>
-                                                    <script>
-                                                        cartPaypal.AddToCart({ id: "PQSK2ZZYGL6QE" })
-                                                    </script>
-                                                </div>
-                                                
-                                                <!-- View Cart Button -->
-                                                <div class="mt-3">
-                                                    <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
-                                                    <script>
-                                                        cartPaypal.Cart({ id: "pp-view-cart" })
-                                                    </script>
+
+                                            <div id="payment-message" class="col-md-12 alert alert-info mb-3">
+                                                <i class="fas fa-info-circle me-2"></i>Complete all required fields to enable payment options.
+                                            </div>
+                                            
+                                            <!-- PayPal Button Container (initially hidden) -->
+                                            <div class="col-md-12 mb-3 text-center" id="paypal-button-container" style="display: none;">
+                                                <!-- Direct PayPal Link Button -->
+                                                <div class="card p-3 bg-light">
+                                                    <h4 id="membership-title">Single Membership - $35/year</h4>
+                                                    <p>Click the button below to complete your payment:</p>
+                                                    <a href="https://www.paypal.com/ncp/payment/365ECVSNEGJ6W" 
+                                                       class="btn btn-primary btn-lg" 
+                                                       target="_blank">
+                                                        <i class="fab fa-paypal me-2"></i>Pay with PayPal
+                                                    </a>
+                                                    <p class="small text-muted mt-3 mb-0">You will be redirected to PayPal to complete your payment securely.</p>
                                                 </div>
                                             </div>
-                                            <!-- PayPal button container -->
-                                            <div id="paypal-button-container" class="mt-4"></div>
-                                            <div id="payment-message" class="mt-3"></div>
                                         </div>
                                     </form>
                                 </div>
