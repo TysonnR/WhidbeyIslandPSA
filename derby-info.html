@@ -16,9 +16,6 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- PayPal Cart Button -->
-        <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="SRWGU9DEE64X6"></script>
-
         <!-- Google Fonts - Using Open Sans and Montserrat as defined in CSS variables -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,15 +74,6 @@
                             <li><a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a></li>
                         </ul>
                     </li>
-                    <!-- PayPal Cart Button -->
-                    <li class="nav-item">
-                        <div class="nav-link cart-button-container">
-                            <paypal-cart-button data-id="navbar-cart"></paypal-cart-button>
-                            <script>
-                                cartPaypal.Cart({ id: "navbar-cart" })
-                            </script>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -127,7 +115,7 @@
                             <div class="card mb-4 shadow-sm border-0">
                                 <div class="card-body">
                                     <h3 class="font-semibold text-primary">2. Fishing Areas & Times</h3>
-                                    <p>Fishing permitted in Marine Areas: 7, 7-1, 8-2, 9, 10.</p>
+                                    <p>Fishing permitted in all open Marine areas (all fish must meet WDFW Marine Area 9 regulations).</p>
                                     <p class="font-semibold mb-2">Derby Hours:</p>
                                     <ul>
                                         <li>Saturday: Dawn to 4:00 pm</li>
@@ -135,8 +123,8 @@
                                     </ul>
                                     <p class="font-semibold mb-2">Weigh-In Locations:</p>
                                     <ul class="mb-0">
-                                        <li>Bayside Marine, Everett</li>
-                                        <li>Fort Casey State Park, Coupeville</li>
+                                        <li>Bayside Marine, Everett (opens at 10am)</li>
+                                        <li>Fort Casey State Park, Coupeville (opens at 10am)</li>
                                     </ul>
                                 </div>
                             </div>
@@ -145,9 +133,8 @@
                                 <div class="card-body">
                                     <h3 class="font-semibold text-primary">3. Fish Eligibility</h3>
                                     <ul class="mb-0">
-                                        <li>Only hatchery (fin-clipped) Coho Salmon are eligible.</li>
-                                        <li>Wild salmon cannot be retained or weighed.</li>
-                                        <li>Minimum weight for entry: 3.0 lbs. whole.</li>
+                                        <li>Only Coho Salmon meeting WDFW regulations for Marine Area 9 are eligible.</li>
+                                        <li>Minimum weight for entry: 2.0 lbs.</li>
                                         <li>Fish must be bled but not gutted or cleaned.</li>
                                     </ul>
                                 </div>
@@ -159,6 +146,8 @@
                                     <ul class="mb-0">
                                         <li>Largest Coho Salmon: Prizes for 1st, 2nd, and 3rd place.</li>
                                         <li>Mystery Fish: Prize for the catch closest to a predetermined mystery weight.</li>
+                                        <li>Youth Division: Special prizes for anglers 15 years old or younger.</li>
+                                        <li>Prize money will be 50% of ticket sales.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -171,6 +160,7 @@
                                         <li>Only one fish per contestant per day can be weighed.</li>
                                         <li>In case of ties, the earliest weigh-in time will determine the winner.</li>
                                         <li>All WDFW regulations must be followed.</li>
+                                        <li>Everyone aboard a boat must have a derby ticket (including charter boats).</li>
                                     </ul>
                                 </div>
                             </div>
