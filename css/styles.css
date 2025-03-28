@@ -176,16 +176,40 @@ li {
   transform: scale(1.10);
 }
 
-.navbar paypal-cart-button {
-  display: inline-block;
-  vertical-align: middle;
+/* Stronger navbar fixes for consistent spacing */
+.navbar-expand-lg .navbar-nav {
+  display: flex !important;
+  align-items: center !important;
 }
 
-/* Cart button container styling */
-.cart-button-container {
-  display: flex;
-  align-items: center;
-  padding: 0;
+.navbar-expand-lg .navbar-nav .nav-item {
+  padding: 0 !important;
+  margin: 0 4px !important; /* Add margin to the items instead of links */
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 10px 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  margin: 0 !important; /* Reset any margin on the links */
+}
+
+/* Fix Members dropdown with the same rules */
+.navbar-expand-lg .navbar-nav #membersDropdownItem {
+  padding: 0 !important;
+  margin: 0 4px !important; /* Same margin as other items */
+}
+
+.navbar-expand-lg .navbar-nav #membersDropdownItem .nav-link {
+  padding: 10px 15px !important;
+  margin: 0 !important;
+}
+
+/* Ensure consistent spacing for dropdown toggle arrows */
+.dropdown-toggle::after {
+  margin-left: 0.5em;
+  vertical-align: middle;
 }
 
 /* Main hero banner for homepage */
@@ -563,11 +587,6 @@ h1.display-4 {
   vertical-align: middle;
 }
 
-.navbar .nav-link paypal-cart-button {
-  transform: scale(0.85);
-  transform-origin: right center;
-}
-
 .website-credit {
   margin-top: 20px;
   padding: 10px 0;
@@ -650,22 +669,12 @@ h1.display-4 {
   .navbar-nav .nav-item:last-child {
     display: flex;
     align-items: center;
-    margin-top: 5px;
-  }
-  
-  .cart-button-container {
-    height: 40px;
   }
   
   .navbar-nav {
     margin-left: auto;
     margin-right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .navbar .nav-link paypal-cart-button iframe {
-    max-height: 30px;
+    align-items: center;
   }
 
   .scroll-indicator {
@@ -771,12 +780,11 @@ h1.display-4 {
     list-style: none;
     margin: 0;
     align-items: center;
+    height: 100%;
   }
   
   .navbar-nav .nav-item {
     position: relative;
-    padding-right: 15px;
-    padding-left: 10px;
     display: flex;
     align-items: center;
     height: 100%;
@@ -786,15 +794,7 @@ h1.display-4 {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 10px 5px;
-  }
-
-  .cart-button-container {
-    height: 45px; /* Match your navbar height */
-  }
-
-  .navbar .nav-link paypal-cart-button iframe {
-    max-height: 35px;
+    padding: 10px 15px;
   }
 
   .navbar-nav .nav-link:hover {
