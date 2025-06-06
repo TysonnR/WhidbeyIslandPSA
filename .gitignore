@@ -1,0 +1,37 @@
+﻿# Dependencies
+node_modules/
+.npm/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor files
+.vscode/settings.json
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build outputs
+dist/
+build/
+
+# PayPal test files (if any)
+paypal-test/
+
+# Backup files
+*.bak
+*.backup
