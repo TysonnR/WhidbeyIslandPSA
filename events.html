@@ -1,8 +1,7 @@
 <!doctype html>
-<!-- Tyson Ringelstetter, 11/13/2024 -->
+<!-- Tyson Ringelstetter, Updated 2026 -->
 <html lang="en">
     <head>
-        <!-- Required Meta Tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Whidbey Island Puget Sound Anglers is an organization dedicated to preserving quality fisheries, enhancing habitat and fishing opportunities.">
@@ -16,12 +15,12 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Google Fonts - Using Open Sans and Montserrat as defined in CSS variables -->
+        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- Font Awesome Icons -->
+        <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
         <!-- Style Sheet -->
@@ -29,46 +28,25 @@
 
         <title>Events | Whidbey Island Puget Sound Anglers</title>
     </head>
-    <body>  
-        
-        <!-- Bootstrap Navigation bar -->
+    <body>
+
+        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
             <a class="navbar-brand" href="index.html">
                 <img src="images/wipsa-logo-navbar.png" alt="Whidbey Island Puget Sound Anglers" width="65">
             </a>
-    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link font-medium" href="index.html">Home</a>
-                    </li>
-                    <!-- About -->
-                    <li class="nav-item">
-                        <a class="nav-link font-medium" href="about.html">About</a>
-                    </li>
-                    <!-- Events -->
-                    <li class="nav-item active">
-                        <a class="nav-link font-medium" href="events.html">Events</a>
-                    </li>
-                    <!-- Derby -->
-                    <li class="nav-item">
-                        <a class="nav-link font-medium" href="derby-info.html">Derby</a>
-                    </li>
-                    <!-- Contact -->
-                    <li class="nav-item">
-                        <a class="nav-link font-medium" href="contact.html">Contact</a>
-                    </li>
-                    <!-- Members Dropdown -->
+                    <li class="nav-item"><a class="nav-link font-medium" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link font-medium" href="about.html">About</a></li>
+                    <li class="nav-item active"><a class="nav-link font-medium" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link font-medium" href="derby-info.html">Derby</a></li>
+                    <li class="nav-item"><a class="nav-link font-medium" href="contact.html">Contact</a></li>
                     <li class="nav-item dropdown" id="membersDropdownItem">
-                        <a class="nav-link dropdown-toggle font-semibold" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Members
-                        </a>
+                        <a class="nav-link dropdown-toggle font-semibold" href="#" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Members</a>
                         <ul class="dropdown-menu" aria-labelledby="membersDropdown">
                             <li><a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
                             <li><a class="dropdown-item" href="https://whidbeypsa.freeforums.net/">Members Forum</a></li>
@@ -78,242 +56,100 @@
             </div>
         </nav>
 
-        <!-- Header and Hero Image -->
+        <!-- Hero -->
         <header class="hero-container-events">
             <div class="hero-text-container">
                 <h1 class="display-3 font-bold text-white text-shadow">Whidbey PSA Events</h1>
             </div>
-            <img src="images/fishingboat-reel.jpg" alt="Puget sound fish" class="img-fluid w-100 h-100">
+            <img src="images/fishingboat-reel.jpg" alt="Puget Sound fishing" class="img-fluid w-100 h-100">
         </header>
 
-        <!-- Secondary Header -->
+        <!-- Intro band -->
         <header class="section-gray py-4 text-center">
             <div class="container">
-                <p class="text-primary font-semibold mb-2 uppercase letter-spacing-wide">Our Upcoming Events</p>
-                <p class="lead mb-0">Stay up to date with our latest activities, meetings, and events! Our monthly meetings are a great opportunity to learn about local fisheries, conservation efforts, and upcoming derbies.</p>
+                <p class="text-primary font-semibold mb-2 uppercase letter-spacing-wide">Stay Connected</p>
+                <p class="lead mb-0">Our monthly meetings are open to all — a great opportunity to learn about local fisheries, conservation, and upcoming events. Meetings begin at 6:30pm at American Legion, 690 SE Barrington Dr, Oak Harbor WA unless noted.</p>
             </div>
         </header>
 
-        <!-- Main Content Area -->
         <main>
-            <!-- Event Schedule Section -->
+
+            <!-- ── UPCOMING EVENTS ── -->
             <section class="py-5">
                 <div class="container">
-                    <p class="small text-center mb-4">Meetings start at 6:30pm. All events are hosted at American Legion, 690 SE Barrington Dr, Oak Harbor WA unless noted.</p>
-                    
-                    <!-- Mobile view calendar (shows on small screens) -->
-                    <div class="d-block d-lg-none bg-light p-4 rounded shadow-sm mb-5">
-                        <h3 class="font-semibold text-primary mb-4">Meeting Dates & Subjects</h3>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">MAR</span>
-                                <span class="d-block font-bold">5</span>
+                    <h2 class="font-semibold text-primary mb-4">Upcoming Events</h2>
+
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="row g-0 align-items-center">
+                            <!-- Date block -->
+                            <div class="col-auto d-flex flex-column align-items-center justify-content-center bg-primary text-white px-4 py-4" style="min-width:110px; border-radius:0.375rem 0 0 0.375rem;">
+                                <span class="font-semibold" style="font-size:0.8rem; letter-spacing:0.1em; opacity:0.75;">MAY</span>
+                                <span class="font-bold" style="font-size:2.75rem; line-height:1;">6</span>
+                                <span style="font-size:0.8rem; opacity:0.6;">2026</span>
                             </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Kathryn from Washington Department of Fish & Wildlife</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">APR</span>
-                                <span class="d-block font-bold">2</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Marble Mount Hatchery</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">APR</span>
-                                <span class="d-block font-bold">26</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Fort Casey Beach Cleanup</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-map-marker-alt me-2"></i>Fort Casey</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">MAY</span>
-                                <span class="d-block font-bold">7</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Shrimping | Locations & Techniques</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">JUN</span>
-                                <span class="d-block font-bold">4</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">To Be Determined</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">JUL</span>
-                                <span class="d-block font-bold">2</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Crabbing | Possible New Rules & Regulations</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-success text-white p-2 rounded">
-                                <span class="d-block font-bold">SEP</span>
-                                <span class="d-block font-bold">13-14</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-bold">COHO SALMON DERBY</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-map-marker-alt me-2"></i>Multiple Locations</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
-                            <div class="date-box text-center me-3 bg-primary text-white p-2 rounded">
-                                <span class="d-block font-bold">DEC</span>
-                                <span class="d-block font-bold">3</span>
-                            </div>
-                            <div>
-                                <p class="mb-1 font-semibold">Christmas Party</p>
-                                <p class="mb-0 small text-secondary"><i class="fas fa-clock me-2"></i>6:30 pm</p>
+                            <!-- Details -->
+                            <div class="col">
+                                <div class="card-body py-3 px-4">
+                                    <span class="badge bg-success mb-2">Upcoming</span>
+                                    <h5 class="card-title font-semibold mb-1">WDFW Speaker — Kathryn Meyer</h5>
+                                    <p class="card-text text-secondary mb-2">Washington Department of Fish &amp; Wildlife representative Kathryn Meyer joins us to discuss local fisheries and conservation efforts.</p>
+                                    <p class="mb-0 small text-secondary">
+                                        <i class="fas fa-clock me-1"></i>6:00 pm &nbsp;&middot;&nbsp;
+                                        <i class="fas fa-map-marker-alt me-1"></i>American Legion, Oak Harbor WA
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Desktop view table (shows on large screens) -->
-                    <div class="d-none d-lg-block mb-5">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover rounded overflow-hidden shadow-sm">
-                                <thead class="bg-primary text-white">
-                                    <tr>
-                                        <th class="py-3">Date</th>
-                                        <th class="py-3">Topic/Event</th>
-                                        <th class="py-3">Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="py-3">3/5/2025</td>
-                                        <td class="py-3">Kathryn from Washington Department of Fish & Wildlife</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">4/2/2025</td>
-                                        <td class="py-3">Marble Mount Hatchery</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">4/26/2025</td>
-                                        <td class="py-3">Fort Casey Beach Cleanup</td>
-                                        <td class="py-3">TBD</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">5/7/2025</td>
-                                        <td class="py-3">Shrimping | Locations & Techniques</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">6/4/2025</td>
-                                        <td class="py-3">To Be Determined</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">7/2/2025</td>
-                                        <td class="py-3">Crabbing | Possible New Rules & Regulations</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">8/6/2025</td>
-                                        <td class="py-3">To Be Determined</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">9/3/2025</td>
-                                        <td class="py-3">To Be Determined</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr class="table-success">
-                                        <td class="py-3 font-semibold">9/13/2025 & 9/14/2025</td>
-                                        <td class="py-3 font-bold">COHO SALMON DERBY</td>
-                                        <td class="py-3">All Day</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">10/1/2025</td>
-                                        <td class="py-3">To Be Determined</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">11/5/2025</td>
-                                        <td class="py-3">To Be Determined</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3">12/3/2025</td>
-                                        <td class="py-3">Christmas Party</td>
-                                        <td class="py-3">6:30 pm</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <p class="small text-secondary mt-2">
+                        <i class="fas fa-info-circle me-1"></i>More events will be announced throughout the year. <a href="contact.html">Contact us</a> to stay informed.
+                    </p>
                 </div>
             </section>
-            
-            <!-- Featured Events Section -->
+
+            <!-- ── PAST FEATURED EVENTS ── -->
             <section class="section-gray py-5">
                 <div class="container">
-                    <h2 class="font-semibold text-primary mb-4">Featured Events</h2>
+                    <h2 class="font-semibold text-primary mb-1">Past Featured Events</h2>
+                    <p class="text-secondary mb-4">A look back at some of our recent highlights.</p>
+
                     <div class="row">
-                        <!-- Derby Event -->
+                        <!-- Coho Derby -->
                         <div class="col-lg-6 mb-4">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="images/coho-derby-row.jpg" class="img-fluid rounded-start h-100" alt="Coho Derby" style="object-fit: scale-down;">
+                                        <img src="images/coho-derby-row.jpg" class="img-fluid rounded-start h-100" alt="Coho Derby" style="object-fit:scale-down;">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <div class="d-flex justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
                                                 <h5 class="card-title font-semibold text-primary">Coho Salmon Derby</h5>
-                                                <span class="badge bg-success">Sep 13-14</span>
+                                                <span class="badge bg-secondary ms-2 flex-shrink-0">Sep 2025</span>
                                             </div>
-                                            <p class="card-text">Join us for the 3rd Annual Whidbey Island Coho Derby! This two-day event features great prizes and supports our conservation efforts.</p>
+                                            <p class="card-text">Our 3rd Annual Whidbey Island Coho Derby — a two-day event with great prizes supporting our conservation efforts.</p>
                                             <a href="derby-info.html" class="btn btn-primary mt-2">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Beach Cleanup -->
                         <div class="col-lg-6 mb-4">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="images/fortcasey.jpg" class="img-fluid rounded-start h-100" alt="Beach Cleanup" style="object-fit: cover;">
+                                        <img src="images/fortcasey.jpg" class="img-fluid rounded-start h-100" alt="Beach Cleanup" style="object-fit:cover;">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <div class="d-flex justify-content-between">
+                                            <div class="d-flex justify-content-between align-items-start">
                                                 <h5 class="card-title font-semibold text-primary">Fort Casey Beach Cleanup</h5>
-                                                <span class="badge bg-primary">Apr 26</span>
+                                                <span class="badge bg-secondary ms-2 flex-shrink-0">Apr 2025</span>
                                             </div>
-                                            <p class="card-text">Help us keep our beaches clean! This community event is part of our habitat conservation efforts. Bring gloves and join us for a rewarding day of service.</p>
-                                            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+                                            <p class="card-text">Volunteers gathered at Fort Casey to help keep our beaches clean as part of our ongoing habitat conservation mission.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -322,8 +158,36 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- Call to Action Section-->
+
+            <!-- ── PAST MEETING TOPICS ── -->
+            <section class="py-5">
+                <div class="container">
+                    <h2 class="font-semibold text-primary mb-1">Past Meeting Topics</h2>
+                    <p class="text-secondary mb-4">Monthly meetings from the previous year.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover rounded overflow-hidden shadow-sm">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th class="py-3">Date</th>
+                                    <th class="py-3">Topic</th>
+                                    <th class="py-3">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="py-2">Mar 5, 2025</td><td>Kathryn Meyer — WA Dept. of Fish &amp; Wildlife</td><td>6:30 pm</td></tr>
+                                <tr><td class="py-2">Apr 2, 2025</td><td>Marble Mount Hatchery</td><td>6:30 pm</td></tr>
+                                <tr><td class="py-2">May 7, 2025</td><td>Shrimping | Locations &amp; Techniques</td><td>6:30 pm</td></tr>
+                                <tr><td class="py-2">Jul 2, 2025</td><td>Crabbing | Possible New Rules &amp; Regulations</td><td>6:30 pm</td></tr>
+                                <tr class="table-success"><td class="py-2 font-semibold">Sep 13–14, 2025</td><td class="font-bold">Coho Salmon Derby</td><td>All Day</td></tr>
+                                <tr><td class="py-2">Dec 3, 2025</td><td>Christmas Party</td><td>6:30 pm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── CTA ── -->
             <section class="py-5 text-center bg-primary text-white">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -331,15 +195,16 @@
                             <h2 class="font-bold mb-3">Join Our Community</h2>
                             <p class="lead mb-4">Become a member of Whidbey Island Puget Sound Anglers and stay updated on all our events.</p>
                             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                <a href="sign-up.html" class="btn btn-light btn-lg px-4 gap-3">Sign Up Today</a>
+                                <a href="sign-up.html" class="btn btn-light btn-lg px-4">Sign Up Today</a>
                                 <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </main>
-        
+
         <!-- Footer -->
         <footer class="footer text-white py-5">
             <div class="container">
@@ -365,19 +230,14 @@
                             <i class="fab fa-facebook fa-2x"></i>
                         </a>
                         <div class="mt-4">
-                            <!-- Website Developer Credit -->
                             <p class="small mb-2">Website by <a href="https://www.linkedin.com/in/tyson-ringelstetter" class="text-white">Tyson Ringelstetter</a></p>
-                            
-                            <!-- Copyright -->
-                            <p class="small mb-0">&copy; 2025 Whidbey Island Puget Sound Anglers.</p>
-                            <p class="small mb-0">All Rights Reserved.</p>
+                            <p class="small mb-0">&copy; 2026 Whidbey Island Puget Sound Anglers. All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        
-        <!-- Optional JavaScript -->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="scripts/script.js"></script>
     </body>
